@@ -1,0 +1,1083 @@
+@charset "UTF-8";
+
+  *{
+    margin: 0;
+    padding: 0;
+  }
+
+  html{
+
+    scroll-behavior: smooth;
+    font-size: calc(100vw / 108)
+  }
+  img{
+    vertical-align: bottom;
+    
+  }
+  
+  li{
+    list-style: none;
+  }
+
+  body{
+  background-color: whitesmoke
+  }
+
+  main{
+    margin: 0 auto;
+    background-image: url(images/background.webp) ;
+    background-attachment: fixed;
+    position: relative;
+  }
+  
+  .Lside {
+    position: fixed;
+    top: 0;
+    /* 1. まず画面の真ん中に持ってくる */
+    left: 50%; 
+    /* 2. mainの幅の半分(540px)だけ右にずらす */
+    /* 1080pxのデザインなら 540px、vwを使っているならその半分を足す */
+    margin-left: min(50vw, 540px); 
+  margin-top:-20px;
+    z-index: 1000;
+  }
+  
+  .Lside svg {
+    width: 44px;
+    display: block;
+  }
+  
+.Rside_relative{
+  position: relative;
+}
+.Rside{
+
+position: fixed;
+margin-top:-20px;
+margin-left:-45px;
+z-index: 1000;
+}
+
+
+
+p{
+  font-family: "Lexend Mega","ta-marugo-gf-03", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  color: #6F0C76;
+}
+
+a{
+  font-family: "Lexend Mega","ta-marugo-gf-03", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  color: #6F0C76;
+  text-decoration: none;
+}
+
+h1{
+  
+  font-family: "Lexend Mega","ta-marugo-gf-03", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+}
+
+.About{
+  position: relative;
+}
+
+.Character{
+  position: relative;
+}
+
+#a_About{
+  position: absolute;
+  margin-top:-400px;
+}
+
+#a_Character{
+  position: absolute;
+  margin-top:-200px;
+}
+
+#a_Illust{
+  position: absolute;
+  margin-top:-200px;
+}
+
+#a_History{
+  position: absolute;
+  margin-top:-200px;
+}
+
+.space {
+  height: min(23.1vw,250px);
+}
+
+header{
+  width: min(100vw, 1080px);
+  flex-wrap: nowrap;
+  
+  position: fixed;
+  z-index: 100;
+  top: 0;
+
+}
+
+.header_u{
+  margin: 0;         /* pタグの隙間を消す */
+  line-height: 0;    /* 行間の隙間を消す */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.header_u svg{
+  width: 100%;
+  height: auto;      /* 高さを自動にして比率を守らせる */
+  display: block;    /* インライン要素の隙間を消す */
+  filter: drop-shadow(0 4px 4px rgba(0,0,0,0.25)); /* SVG内のfilterが重い場合はCSSでも可 */
+}
+
+.menu a{
+  
+color: #0C46B2;
+text-decoration: none;
+
+justify-content: center;
+
+display: block;
+}
+
+
+.menu ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.menu li {
+  border-right: min(0.5vw,4px) solid #C0E7FF;
+  
+  margin-top:min(4vw,45px);
+}
+
+.menu li:last-child {
+  border-right: none;
+}
+
+.header_history{
+  border-right: none;
+}
+
+.menu li a {
+  display: block;
+  font-size: min(3.2rem,32px);
+  color: #004bb1;
+  padding-left:min(3.2vw,35px);
+  padding-right:min(3.2vw,35px);
+}
+
+.header_about{
+  padding-left: 20px;
+}
+
+
+.Main p{
+  position: relative;
+  margin-top: min(1.85vx,20px); 
+}
+
+.Main h1 img{
+  position: absolute;
+  margin-top: max(-9.25vw,-100px);
+  z-index: 2;
+  left:0;
+  right:0;
+  margin-left:min(18.5vw,200px);
+  width:min(65.9vw,712px);
+  height: min(19vw,206px);
+}
+
+.mainIllust img{
+  border-radius: 60px 60px 0 0;
+  
+  width:min(100vw,1080px);
+  height: min(120vw,1300px);
+}
+
+
+.About {
+  background-color: #81ABFF;
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  /* 高さをvwで指定することで、画面幅に合わせて全体の比率を維持します */
+  height: min(55.55vw, 600px); 
+  margin: 0 auto;
+  margin-top: -50px;
+  overflow: hidden;
+}
+
+/* 共通設定：中心を基準にする */
+.about_yu, .peta, .kami, .About h1 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  /* transformは各要素で個別に調整するため、ここでは定義しません */
+}
+
+.About_bunsyo{
+  
+  vertical-align: left;
+  margin-top:300px;
+  margin-left:500px;
+  position: relative;
+  z-index: 6;
+  
+text-align :center;
+}
+
+/* --- 1. 土台の「紙」 --- */
+.kami {
+  z-index: 1;
+  /* 紙を中央から少し上に配置（数値は微調整してください） */
+  transform: translate(-50%, -45%);
+}
+.kami svg {
+  width: min(85vw, 918px);
+  height: auto;
+}
+
+/* --- 2. ABOUTの大きなロゴ --- */
+.About h1 {
+  z-index: 3;
+  /* タイトルを紙の上のほうへ固定 */
+  transform: translate(-50%, -160%);
+  margin: 0;
+}
+.About h1 p {
+  font-size: min(6vw, 64px); /* 文字もvwで縮小させる */
+  color: #6F0C76;
+}
+
+/* --- 3. 【重要】文章部分（箱は中央、中身は左） --- */
+.About_bunsyo {
+  position: absolute; /* relativeからabsoluteに変更 */
+  top: 50%;
+  left: 50%;
+  z-index: 6;
+  
+  /* 文章の「箱」自体の幅 */
+  width: min(64.81vw, 700px); 
+  
+  /* 箱の位置調整：左に55%ずらし、縦は中央(0%)に */
+  transform: translate(-55%, -60%); 
+
+  /* これが左寄せの正解です */
+  text-align: left; 
+  list-style: none;
+  padding: 0;
+  margin: 0; /* 余計なmarginをリセット */
+}
+
+.About_bunsyo p {
+  font-size: min(2.2vw, 24px); /* 文字サイズもvw連動 */text-align: left; /* 念のためここにも */
+}
+
+/* --- 4. 付箋（peta） --- */
+.peta {
+  z-index: 4;
+  /* 紙の左上に配置されるように調整 */
+  transform: translate(-140%, -220%);
+}
+.peta svg {
+  width: min(25vw, 270px);
+}
+
+/* --- 5. キャラクター（yu） --- */
+.about_yu {
+  z-index: 10;
+  /* キャラクターを右下へ配置 */
+  transform: translate(50%, -40%);
+}
+.about_yu img {
+  width: min(35vw, 378px);
+  height: auto;
+}
+
+  .Obi{
+    text-align: center;
+   }
+
+   .Obi img{
+    width:min(100vw,1080px);
+    height: min(10.3vw,112px);
+   }
+
+/*---------------------------------キャラ紹介------------------------------------------*/
+
+
+
+.character_LOGO{
+  text-align: center;
+  margin: min(11.11vw,120px);
+
+}
+
+.character_LOGO svg{
+  width:min(52.68vw,569px);
+}
+
+.tenten{
+  position: absolute;
+  margin-top: min(3.24vw,35px);; 
+  margin-left:min(11.11vw,120px);
+}
+
+.tenten svg{
+  width:min(11.57vw,125px);
+}
+
+.matome_shokai_kukuru{
+  width:min(87.9vw,950px);
+  
+  border-radius:min(6.29vw,68px);/*角丸半径*/
+  background: #EE38FF;
+  border:min(0.46vw,5px) solid #6F0C76;/*枠線設定*/
+  padding-top:min(8.33vw,90px);
+  padding-right:0px;
+  padding-bottom:min(4.6vw,50px);
+  padding-left:0px;
+  box-shadow: 28px 36px #6F0C76;
+  
+  margin: 0 auto;
+  
+}
+
+
+.matome_shokai{
+  width: min(78.1vw,844px);
+  margin: 0 auto;
+  border: min(0.46vw,5px) solid #6F0C76;
+  background-color:white;
+  border-bottom-right-radius:min(5vw,54px);/*角丸半径右下*/
+  border-bottom-left-radius:min(5vw,54px);/*角丸半径左下*/
+  border:min(0.46vw,5px) solid #6F0C76;/*枠線設定*/
+  
+}
+
+
+.shokaitati{
+  display:flex;
+  justify-content: center;
+  flex-wrap:wrap;
+  padding-top:min(4.62vw,50px);
+  padding-bottom:min(4.62vw,50px);
+  padding-left:min(5.55vw,60px);
+  padding-right: min(5.55vw,60px);
+}
+
+.shokai{
+  width: min(31.4vw, 340px);
+  height: min(40.2vw, 435px);
+  position: relative;
+  margin: 0 auto;
+  /* 下からはみ出さないように設定（必要に応じて） */
+  overflow: hidden;
+}
+  
+.shokai_gazo{
+  position: relative;
+  text-align: center;
+  margin-top:min(6.48vw,70px);
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:min(0.92vw,10px);
+}
+
+
+
+.name_line{
+  text-align: center;
+  font-size: min(4.0rem,40px);
+  background: linear-gradient(transparent 50%, #a8eaff 50%);
+}
+
+.tagu{
+  text-align: center;
+  font-size: min(2.4rem,24px);
+}
+
+.chara img{
+  
+  width:min(30vw,329px);
+  height: min(23.1vw,250px);
+}
+
+.chara{
+  position: absolute;
+  top:max(-5.462vw,-59px);
+  left:min(0.3703vw,4px);
+}
+
+.kakushi{
+  position: absolute;
+  /* 親の底辺にぴったり合わせる */
+  bottom: min(0.74074vw,8px); /* 1pxの隙間も許さない場合はマイナス指定 */
+  left: 47%;
+  transform: translateX(-47%);
+  /* 親の幅に対してどれくらいのサイズにするか（例：親の76%） */
+  width: 76%; 
+  line-height: 0;
+}
+
+.kakushi svg{/* 親の .kakushi の幅いっぱいに広がるようにする */
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.file img{
+  width: min(24.3vw,263px);
+  height: min(18.7vw,203px);
+}
+
+.Character section h2 p{
+text-align: center;
+color: white;
+font-size: min(6.4rem,64px);
+margin-top: min(27.7vw,300px);
+margin-bottom: min(27.7vw,300px);
+}
+
+
+
+.shokai{
+  
+  transition: transform 0.3s ease;
+}
+
+.chara{
+  transition: transform 0.3s ease;
+}
+
+
+.file:hover {
+  transform: translateY(-0.3vw);
+}
+
+.chara:hover {
+  transform: translateY(-0.9vw);
+  box-shadow    : 0 0 20px #0000;
+}
+
+.shokai:hover {
+  transform: translateY(-10px);
+}
+
+/*.sayuri_S{
+  margin-bottom:0px;
+}*/
+
+
+/*---------------------------------キャラ紹介おわり------------------------------------------*/
+
+.illustration{
+  position: relative;
+}
+
+.illust_background{
+position: absolute;
+z-index: 0;
+top:0;
+}
+
+.illust_background svg{
+  
+width: min(100vw,1080px);
+height: min(156.75vw,1693px);
+
+}
+
+.illust_moji{
+  position: relative;
+  z-index: 1;
+  font-size:min(1.6rem,16px);
+}
+
+.illust_LOGO svg{
+  width: min(50vw,540px);
+  margin: 0 auto;
+  
+  margin-top: min(13.88vw,150px); 
+  margin-bottom: min(9.25vw,100px); 
+position: relative;
+z-index: 1;
+}
+
+.hidden {
+  margin-top: min(5.55vw, 60px);
+  width: 100%; /* 1080px固定ではなく100%に */
+  max-width: 1080px;
+  position: relative;
+  overflow: hidden; /* xだけでなく全体をカバー */
+}
+
+.hidden svg{
+ width:  min(146.29vw,1580px); 
+}
+
+
+.hidden img{
+  width:  min(200vw,2157px); 
+  
+  height: min(27.4vw,296px);
+ }
+ 
+
+ .illustline {
+  position: relative;
+  /* marginのpx指定をvwに統一 */
+  margin: min(9.25vw, 100px) auto;
+  width: 100%;
+  height: min(30vw, 324px); /* 高さを確保して子要素の崩れを防ぐ */
+  display: block; /* flexより制御しやすい場合があります */
+}
+
+/* 上側の画像 */
+.illustline_top {
+  position: relative;
+  z-index: 5;
+  margin: 0;
+  transform: rotate(4deg);
+  /* 回転の基準を明確にする（必要に応じて） */
+  transform-origin: center center;
+}
+
+.illustline_top img {
+  width: min(200vw, 2157px);
+  height: auto;
+  display: block;
+}
+
+/* 下側のピンク背景（SVG） */
+.illustline_under {
+  position: absolute;
+  /* 固定の 10px ではなく vw を使用する */
+  top: min(0.92vw, 10px);
+  left: 50%;
+  transform: translateX(-50%) rotate(-1.5deg);
+  z-index: 1;
+  width: 100%;
+}
+
+.illustline_under svg {
+  /* 親の幅（100%）に追従させる */
+  width: min(146.29vw, 1580px);
+  height: auto;
+  display: block;
+}
+
+.illustline_under{
+  position:absolute;
+  margin-top:10px;
+  transform: rotate(-1.5deg);
+z-index: 1;
+}
+
+.illustline {
+  position: relative;
+  width: 100%;
+  /* デザイン上の最大の高さ、またはvwで高さを指定 */
+  height: min(30vw, 324px); 
+  margin: min(9.25vw, 100px) auto;
+  /* 子要素を重ねるための準備 */
+}
+
+.illustline_top,
+.illustline_under {
+  position: absolute;
+  /* 1. 親要素の「ど真ん中」に配置の起点を置く */
+  top: 50%;
+  left: 50%;
+  /* 2. 要素自身の大きさの半分だけ戻す（これで中心が合う） */
+  /* ついでに回転もここに記述することで、中心を軸に回ります */
+  transform-origin: center center;
+}
+
+/* 上の画像 */
+.illustline_top {
+  z-index: 5;
+  /* 左右中央(50%)、上下中央(50%)、そして回転4度 */
+  transform: translate(-50%, -50%) rotate(4deg);
+}
+
+.illustline_top img {
+  width: min(200vw, 2157px);
+  height: auto;
+  display: block;
+}
+
+/* 下のピンクSVG */
+.illustline_under {
+  z-index: 1;
+  /* 左右中央(50%)、上下中央(50%) + 少しだけ下にずらす(2%)、そして回転-1.5度 */
+  /* 10pxのような固定値ではなく % や vw を使うのがズレないコツです */
+  transform: translate(-70%, calc(-50% + 1vw)) rotate(-1.5deg);
+}
+
+.illustline_under svg {
+  width: min(146.29vw, 1580px);
+  height: auto;
+  display: block;
+}
+
+
+/*---------------------------------ボタン------------------------------------------*/
+.button{
+  display: flex;
+  justify-content: center;
+  margin-top:min(9.2vw,100px);
+  margin-bottom:min(9.2vw,100px);
+
+transition: transform 0.3s ease;
+}
+
+
+.button_top svg{
+
+  width: min(39vw,422px);
+  height: min(8.88vw,96px);
+}
+
+.button_under svg{
+  
+  width: min(39vw,422px);
+  height: min(8.88vw,96px);
+}
+
+.button_top{
+  position:absolute;
+z-index: 5;
+
+
+transition: transform 0.3s ease;}
+
+.button_under{
+  margin: 0 auto;
+  position:relative;
+  
+  margin-top:min(1.388vw,15px);
+  z-index: 2;
+}
+
+.button:hover{
+  
+  transform: translateY(0.27vw);
+}
+
+.button_top:hover{
+  transform: translateY(0.6vw);
+}
+
+/*---------------------------------ボタンおわり------------------------------------------*/
+
+.history_LOGO{
+  margin-top:min(41.66vw,450px); 
+  margin-bottom: min(9.25vw,100px);
+  position: relative;
+  z-index: 4;
+}
+
+.history_LOGO img{
+  width: min(41.94vw,453px);
+  height: min(18.79vw,203px);
+}
+
+.history p{
+  font-size:min(3.2rem,32px)
+}
+
+.ZU{
+  
+  width: min(88.33vw,954px);
+  transform: rotate(-2deg);
+  margin-top: min(11.11vw,120px);
+  margin-bottom: min(11.11vw,120px);
+  margin-left:auto;
+  margin-right:auto;
+  
+}
+
+.ZU img{
+  width: min(88.33vw,954px);
+  height: min(88.51vw,956px);
+}
+.saigo{
+  
+  position:relative;
+}
+
+.osoroshi{
+  
+  width:min(100vw,1080px);
+  overflow: hidden;
+  
+}
+
+.osoroshi img{
+  width:min(118.51vw,1280px);
+  
+ height:min(129.62vw,1400px);
+}
+
+.saigo_moji p{
+  position: absolute;
+  color: white;
+  font-size:min(3.2rem,32px);
+  text-align: center;
+  
+  margin-top:min(88.33vw,954px);
+  
+  
+  left: 0;
+  right: 0;
+
+}
+
+
+.saigo_moji .dice{
+  
+  font-size: min(6.4rem,64px);
+}
+  
+
+.dice{
+  padding-top:min(4.62vw,50px);
+}
+
+footer{
+  
+  background-color: black;
+}
+
+footer p{
+  color:white; 
+  font-size:min(2.0rem,20px);
+  padding-bottom:min(2.77vw,30px);
+  position: relative;
+}
+
+footer a{
+  
+  display: flex;
+  justify-content: center;
+  margin: min(0.92vw,10px);
+}
+
+.contact{
+  padding-top:min(2.77vw,30px);
+  padding-bottom:min(0.92vw,850px);
+}
+
+.mini_Yu2{
+  position: absolute;
+  z-index: 3;
+  margin-top: max(-9.25vw,-100px);
+  margin-left:min(1.85vw,20px);
+}
+
+
+.mini_Yu2 img{
+  width: min(30.55vw,330px);
+  height: min(31.01vw,335px);
+}
+
+
+/*---------------------------------history.html------------------------------------------*/
+
+
+
+
+.Stitle_matome{
+  margin-left:min(32.4vw,350px);
+  margin-top: min(4.62vw,50px);
+  position: relative;
+}
+
+.HandOut p{
+  font-size: min(2.4rem,24px);
+  text-align: left;
+}
+
+.S_title{
+  margin-top: max(-5.55vw,-60px);
+  position:absolute;
+transition: transform 0.3s ease;
+
+}
+
+
+.S_title:hover{
+  transform: translateX(0%);
+  transform: translateY(-100%);
+  transform: scale(1.1);
+}
+
+.HandOut{
+  margin-left: min(12.96vw,140px);
+  padding:30px 50px;
+  padding-top: min(2.77vw,30px);
+  padding-bottom: min(2.77vw,30px);
+  padding-left:min(4.62vw,50px);
+  width:fit-content;
+  background-color: white;
+  border: min(0.37vw,4px) solid #6F0C76;
+  margin-bottom:10px;
+
+}
+
+.sinario{
+  padding-top:min(8.33vw,90px);
+  position: relative;
+}
+
+.year{
+  position: absolute;
+  margin-top:max(-1.85vw,-20px);
+  margin-left: max(-21.29vw,-230px);
+  z-index: 3;
+}
+
+
+.year p{
+  font-size: min(3.2rem,32px);
+  
+}
+
+.year_suji{
+  margin-left: min(3.70vw,40px);
+  margin-top:max(-3.51vw,-38px)
+}
+.year {
+  align-items: flex-start; /* 上端を揃える */
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden; /* はみ出しによるスクロールバーを防止 */
+}
+
+main{
+  width: 100vw;
+  max-width: 1080px;
+}
+
+header{
+  
+  max-width: 1080px;
+}
+
+
+
+
+.shokai_honbun p{
+  font-size: min(2.4rem,24px)
+}
+
+.tokutyo{
+  position: relative;
+}
+
+.tokutyo p{
+  font-size: min(2.4rem,24px);
+}
+.seat ul {
+  
+  font-size: min(2.4rem,24px);
+}
+
+
+
+.tokutyo svg{
+    
+  position: relative;
+}
+
+
+
+.tokutyo_hidari{
+  color: white;
+text-align:left;
+position: absolute;
+z-index: 2;
+margin-left: min(3.24vw,35px);
+}
+.tokutyo_migi{
+  color:#6F0C76;
+  text-align:left;
+position: absolute;
+z-index: 2;
+margin-left: min(12.96vw,140px);
+}
+
+.tokutyo_hidari, .tokutyo_migi {
+  position: absolute;
+  /* margin-top は使わず、top: 50% と transform で中央固定 */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;}
+
+
+
+.haikei{
+  position: absolute;
+  margin-left: min(4.72vw,51px);
+ margin-top: min(13.88vw,150px);
+ z-index: 0;
+}
+
+.haikei img{
+  width: min(90.46vw,977px);
+  height: min(121.11vw,1308px);
+}
+
+.name_plate{
+  padding-top: min(4.62vw,50px);
+  margin-bottom: min(2.77vw,40px);
+}
+
+
+.chara_yoso{
+  margin-left:min(9.25vw,100px);
+}
+
+.tokutyo li{
+  position: relative;
+    display: flex;
+    align-items: center; /* 垂直方向の中央 */
+    margin-top: min(1.388vw, 15px);
+}
+
+.shokai_honbun p{
+  
+text-align:left;
+}
+
+.shokai_honbun{
+  margin-top: min(3.7vw,40px);
+  width: min(38.14vw,412px);
+  height: fit-content;
+  background-color: white;
+  padding: min(2.7vw,30px);
+  float: left;
+  border-radius:min(1.38vw,15px);
+  border: min(0.35vw,3px) solid #6F0C76 ;
+}
+
+
+.chara_yoso li svg{
+    
+  border-radius: min(1.75vw,19px);
+}
+
+.chara_yoso{
+  position: relative;
+    z-index: 1;
+}
+
+.shokai_sita_gazo{
+    position: absolute;
+    z-index: 0;
+    padding-top: min(46.29vw,500px);
+}
+
+.seat section{
+    margin-top:min(1.85vw,20px);
+}
+
+.seat{
+    position: relative;
+  width: min(100vw,1080px);
+  margin: 0 auto;
+  
+  padding-top: min(46.29vw,500px);
+}
+
+.seat section{
+    text-align:  center; 
+}
+
+.seat h1{
+  font-family: "Lexend Mega","ta-marugo-gf-03", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+ position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: max(-20.37vw,-220px);
+    font-size: min(3.0rem,30px);
+}
+
+.seat ul {
+    
+    position: absolute;
+    text-align: left;
+    
+    margin-left :min(22.22vw,240px);
+    
+    margin-top:max(-13.88vw,-150px);
+    text-decoration:underline;
+    text-decoration-color: #6F0C76;
+    z-index: 3;
+}
+.seat ul li{
+    margin-bottom:min(0.92vw,10px);
+}
+
+
+.seat ul a{
+
+  text-decoration:underline;
+  text-decoration-color: #6F0C76;
+}
+
+
+.seat ul p{
+  text-align: left;
+  
+  text-decoration:underline;
+  text-decoration-color: white;
+}
+
+.seat ul p{
+  text-align: left;
+}
+
+
+.seat img{
+  width: min(62.87vw,679px);
+  height: min(21.66vw,234px);
+}
+
+
+.tokutyo svg{
+  width: min(27.68vw,299px);
+  height: auto; /* 高さを自動にして比率を維持 */
+    display: block; /* 余計な隙間を排除 */
+}
+
+
+@media (min-width: 979px){
+ body{
+   zoom: 0.5;
+ }
+}

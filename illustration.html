@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="jp"">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ねじゆ～帳_イラスト</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- 丸ゴ 3-->
+    <script>
+            (function(d) {
+              var config = {
+                kitId: 'xeu6bne',
+                scriptTimeout: 3000,
+                async: true
+              },
+              h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+            })(document);
+          </script>
+
+<!-- 英字フォント-->
+
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@100..900&display=swap" rel="stylesheet">
+<style>
+
+/* -------------------------------------------引用箇所(一部加筆あり)-------------------------------------------------------*/
+.lightbox-overlay {
+  /* 初期状態では非表示 */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s; /* フェードイン・アウトのアニメーション */
+
+  /* オーバーレイの基本スタイル */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* 半透明の背景 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* :target擬似クラスで表示状態を切り替える */
+.lightbox-overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.lightbox-content img{
+   
+  width: min(83.3vw,900px);
+}
+
+.lightbox-content {
+  overflow: auto; /* 画像がはみ出す場合にスクロール */
+  background: #fff;
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transform: scale(0.8); /* ポップアップ時の初期サイズ */
+  transition: transform 0.3s ease-out;
+}
+
+.lightbox-overlay:target .lightbox-content {
+  transform: scale(1); /* ポップアップ時に元のサイズに */
+}
+
+.lightbox-content img {
+  display: block; /* 余白をなくす */
+  max-width: 100%;
+  height: auto;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: #fff;
+  font-size: 40px;
+  text-decoration: none;
+  line-height: 1;
+  z-index: 1001; /* 画像より手前に表示 */
+}
+
+.lightbox-close:hover {
+  color: #ccc;
+}
+
+/* オーバーレイクリックで閉じるための設定 (HTMLのa href="#_") */
+.lightbox-overlay .lightbox-close-area { /* オーバーレイ全体をクリックで閉じるための要素を別途用意する場合 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+.lightbox-caption {
+  color: #6F0C76;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom:20px;
+  font-size: min(3.6rem,36px);
+}
+
+
+/* -------------------------------------------引用おわり-------------------------------------------------------*/
+.illust_LOGO2{
+    padding-top:min(9.25vw,100px);
+    
+}
+
+
+.illust_LOGO2 svg{
+  
+  width: min(50vw,540px);
+  
+  height:fit-content;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  
+  justify-content: space-between;
+}
+
+.illust_kakomu {
+  width: min(25.92vw,280px);
+  height: min(25.92vw,280px);
+  background-color: antiquewhite; 
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  
+  padding-top:min(1.85vw,20px);
+  padding-bottom:min(4.62vw,50px);
+  
+
+  border: min(0.46vw,5px) solid #6F0C76;
+  margin-bottom:min(1.85vw,20px);
+  
+  
+}
+
+.illust_kakomu a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  
+}
+
+.illust_kakomu img {
+  max-width: min(21.29vw,230px);
+  max-height: min(21.29vw,230px);
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+.gallery_kakomu{
+    width:min(86.11vw,930px);
+    margin: 0 auto;
+    margin-top:min(2.77vw,30px);
+    
+    padding-bottom:min(55.55vw,600px);
+    
+  margin-top:min(9.25vw,100px);}
+
+.home_button_top{
+    position: relative;
+}
+
+.home_button{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top:min(37.03vw,400px);
+}
+.home_button img{
+  width:min(35.37vw,382px);
+  height:min(9.72vw,105px);
+}
+.illust_kakomu p{
+    font-size:min(2.4rem,24px);
+}
+
+</style>
+</head>
+<body>
+    <main>
+          
+            <div class="illust_LOGO2">
+                    <p> <svg width="388" height="99" viewBox="0 0 388 99" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M14.0001 15H382V94H14.0001V15Z" fill="white"/>
+                         <path d="M51.3644 70V49H55.4844V70H51.3644ZM53.3644 44.12C52.4844 44.12 51.8044 43.8933 51.3244 43.44C50.8444 42.9867 50.6044 42.3467 50.6044 41.52C50.6044 40.7467 50.8444 40.12 51.3244 39.64C51.831 39.16 52.511 38.92 53.3644 38.92C54.2444 38.92 54.9244 39.1467 55.4044 39.6C55.8844 40.0533 56.1244 40.6933 56.1244 41.52C56.1244 42.2933 55.871 42.92 55.3644 43.4C54.8844 43.88 54.2177 44.12 53.3644 44.12ZM68.6978 70V40.4H72.8178V70H68.6978ZM85.69 70V40.4H89.81V70H85.69ZM110.847 70.4C109.14 70.4 107.634 70 106.327 69.2C105.02 68.4 104.007 67.2533 103.287 65.76C102.567 64.2667 102.207 62.4933 102.207 60.44V49H106.327V59.04C106.327 60.64 106.54 62 106.967 63.12C107.42 64.2133 108.1 65.0533 109.007 65.64C109.94 66.2 111.114 66.48 112.527 66.48C113.514 66.48 114.434 66.3333 115.287 66.04C116.14 65.72 116.887 65.2667 117.527 64.68C118.167 64.0933 118.674 63.4 119.047 62.6C119.42 61.7733 119.607 60.8533 119.607 59.84V49H123.727V70H119.607V65.6L120.327 65.12C119.98 66 119.367 66.84 118.487 67.64C117.634 68.44 116.554 69.1067 115.247 69.64C113.967 70.1467 112.5 70.4 110.847 70.4ZM144.115 70.4C141.928 70.4 139.915 70.0933 138.075 69.48C136.262 68.8667 134.742 67.88 133.515 66.52L136.315 63.96C137.302 64.9467 138.435 65.6933 139.715 66.2C140.995 66.7067 142.408 66.96 143.955 66.96C144.568 66.96 145.195 66.92 145.835 66.84C146.475 66.76 147.062 66.6133 147.595 66.4C148.155 66.1867 148.595 65.92 148.915 65.6C149.262 65.2533 149.435 64.8267 149.435 64.32C149.435 63.4933 148.862 62.88 147.715 62.48C147.128 62.2667 146.448 62.0667 145.675 61.88C144.902 61.6667 144.035 61.48 143.075 61.32C141.475 61 140.062 60.64 138.835 60.24C137.608 59.84 136.595 59.32 135.795 58.68C135.235 58.2 134.795 57.6267 134.475 56.96C134.182 56.2933 134.035 55.52 134.035 54.64C134.035 53.7067 134.275 52.88 134.755 52.16C135.235 51.4133 135.902 50.7733 136.755 50.24C137.635 49.68 138.648 49.2667 139.795 49C140.968 48.7067 142.222 48.56 143.555 48.56C144.702 48.56 145.888 48.68 147.115 48.92C148.342 49.16 149.502 49.5333 150.595 50.04C151.715 50.52 152.648 51.1467 153.395 51.92L151.155 54.68C150.488 54.1467 149.715 53.68 148.835 53.28C147.982 52.8533 147.102 52.5333 146.195 52.32C145.288 52.08 144.435 51.96 143.635 51.96C142.995 51.96 142.355 52 141.715 52.08C141.075 52.16 140.475 52.3067 139.915 52.52C139.382 52.7067 138.955 52.96 138.635 53.28C138.315 53.6 138.155 54 138.155 54.48C138.155 54.8 138.235 55.1067 138.395 55.4C138.582 55.6667 138.835 55.9067 139.155 56.12C139.688 56.44 140.408 56.7333 141.315 57C142.222 57.24 143.248 57.4667 144.395 57.68C145.808 57.9467 147.115 58.2667 148.315 58.64C149.542 58.9867 150.582 59.44 151.435 60C152.102 60.4533 152.608 60.9867 152.955 61.6C153.328 62.2133 153.515 62.9333 153.515 63.76C153.515 65.1467 153.088 66.3467 152.235 67.36C151.382 68.3467 150.248 69.1067 148.835 69.64C147.448 70.1467 145.875 70.4 144.115 70.4ZM166.66 70V42.88H170.78V70H166.66ZM160.78 53V49H177.74V53H160.78ZM188.586 70V49H192.746V56.28L191.826 55.52C192.2 54.24 192.826 53.08 193.706 52.04C194.613 50.9733 195.64 50.1333 196.786 49.52C197.96 48.88 199.173 48.56 200.426 48.56C201.226 48.56 201.986 48.64 202.706 48.8C203.453 48.96 204.053 49.1867 204.506 49.48L203.426 53.8C202.92 53.5333 202.32 53.32 201.626 53.16C200.933 53 200.28 52.92 199.666 52.92C198.653 52.92 197.72 53.0933 196.866 53.44C196.013 53.7867 195.28 54.2667 194.666 54.88C194.053 55.4667 193.573 56.1333 193.226 56.88C192.906 57.6267 192.746 58.3867 192.746 59.16V70H188.586ZM221.789 70.4C219.549 70.4 217.562 69.9333 215.829 69C214.122 68.04 212.789 66.7333 211.829 65.08C210.869 63.4267 210.389 61.56 210.389 59.48C210.389 57.3467 210.896 55.4667 211.909 53.84C212.922 52.1867 214.309 50.8933 216.069 49.96C217.829 49.0267 219.829 48.56 222.069 48.56C223.456 48.56 224.736 48.7333 225.909 49.08C227.109 49.4267 228.136 49.8933 228.989 50.48C229.869 51.0667 230.562 51.7067 231.069 52.4C231.576 53.0933 231.856 53.8 231.909 54.52L230.789 54.44V49H234.949V70H230.789V64.48L231.669 64.6C231.616 65.24 231.309 65.9067 230.749 66.6C230.189 67.2667 229.456 67.8933 228.549 68.48C227.642 69.04 226.602 69.5067 225.429 69.88C224.282 70.2267 223.069 70.4 221.789 70.4ZM222.789 66.6C224.389 66.6 225.802 66.2933 227.029 65.68C228.256 65.04 229.216 64.1867 229.909 63.12C230.602 62.0267 230.949 60.8133 230.949 59.48C230.949 58.12 230.602 56.9067 229.909 55.84C229.216 54.7733 228.256 53.9333 227.029 53.32C225.802 52.7067 224.389 52.4 222.789 52.4C221.189 52.4 219.776 52.7067 218.549 53.32C217.322 53.9333 216.349 54.7733 215.629 55.84C214.936 56.9067 214.589 58.12 214.589 59.48C214.589 60.8133 214.936 62.0267 215.629 63.12C216.349 64.1867 217.322 65.04 218.549 65.68C219.776 66.2933 221.189 66.6 222.789 66.6ZM250.605 70V42.88H254.725V70H250.605ZM244.725 53V49H261.685V53H244.725ZM272.732 70V49H276.852V70H272.732ZM274.732 44.12C273.852 44.12 273.172 43.8933 272.692 43.44C272.212 42.9867 271.972 42.3467 271.972 41.52C271.972 40.7467 272.212 40.12 272.692 39.64C273.198 39.16 273.878 38.92 274.732 38.92C275.612 38.92 276.292 39.1467 276.772 39.6C277.252 40.0533 277.492 40.6933 277.492 41.52C277.492 42.2933 277.238 42.92 276.732 43.4C276.252 43.88 275.585 44.12 274.732 44.12ZM300.305 70.4C297.825 70.4 295.625 69.9333 293.705 69C291.785 68.0667 290.278 66.7733 289.185 65.12C288.092 63.4667 287.545 61.5867 287.545 59.48C287.545 57.3467 288.092 55.4667 289.185 53.84C290.278 52.1867 291.785 50.8933 293.705 49.96C295.625 49.0267 297.825 48.56 300.305 48.56C302.758 48.56 304.945 49.0267 306.865 49.96C308.785 50.8933 310.292 52.1867 311.385 53.84C312.478 55.4667 313.025 57.3467 313.025 59.48C313.025 61.5867 312.478 63.4667 311.385 65.12C310.292 66.7733 308.785 68.0667 306.865 69C304.945 69.9333 302.758 70.4 300.305 70.4ZM300.305 66.64C301.905 66.64 303.358 66.3333 304.665 65.72C305.972 65.1067 306.998 64.2667 307.745 63.2C308.518 62.1067 308.878 60.8667 308.825 59.48C308.878 58.0667 308.518 56.8267 307.745 55.76C306.998 54.6933 305.972 53.8533 304.665 53.24C303.358 52.6267 301.905 52.32 300.305 52.32C298.678 52.32 297.212 52.6267 295.905 53.24C294.598 53.8533 293.572 54.7067 292.825 55.8C292.078 56.8667 291.718 58.0933 291.745 59.48C291.718 60.8667 292.078 62.1067 292.825 63.2C293.572 64.2667 294.598 65.1067 295.905 65.72C297.212 66.3333 298.678 66.64 300.305 66.64ZM323.625 70V49H327.745V54.36L326.505 54.56C326.985 53.5733 327.679 52.6267 328.585 51.72C329.492 50.8133 330.559 50.0667 331.785 49.48C333.039 48.8667 334.412 48.56 335.905 48.56C337.879 48.56 339.532 48.9333 340.865 49.68C342.199 50.4267 343.199 51.4667 343.865 52.8C344.559 54.1333 344.905 55.68 344.905 57.44V70H340.785V58C340.785 56.8 340.519 55.7867 339.985 54.96C339.479 54.1067 338.772 53.4667 337.865 53.04C336.985 52.5867 335.959 52.36 334.785 52.36C333.772 52.36 332.825 52.5467 331.945 52.92C331.092 53.2667 330.345 53.7333 329.705 54.32C329.092 54.9067 328.612 55.5467 328.265 56.24C327.919 56.9333 327.745 57.6267 327.745 58.32V70H325.705C325.119 70 324.652 70 324.305 70C323.959 70 323.732 70 323.625 70Z" fill="#6F0C76"/>
+                         <path d="M9.99994 10H378V89H9.99994V10Z" stroke="#6F0C76" stroke-width="3"/>
+                         <rect width="20" height="20" fill="white"/>
+                         <rect x="1.5" y="1.5" width="17" height="17" stroke="#6F0C76" stroke-opacity="0.99" stroke-width="3"/>
+                         <rect x="368" width="20" height="20" fill="white"/>
+                         <rect x="369.5" y="1.5" width="17" height="17" stroke="#6F0C76" stroke-opacity="0.99" stroke-width="3"/>
+                         <rect y="79" width="20" height="20" fill="white"/>
+                         <rect x="1.5" y="80.5" width="17" height="17" stroke="#6F0C76" stroke-opacity="0.99" stroke-width="3"/>
+                         <rect x="368" y="79" width="20" height="20" fill="white"/>
+                         <rect x="369.5" y="80.5" width="17" height="17" stroke="#6F0C76" stroke-opacity="0.99" stroke-width="3"/>
+                         </svg>
+                     </p>
+            </div>
+                    <div class="gallery_kakomu">
+                     <div class="gallery">
+                            <div class="illust_kakomu"><a href="#lightbox-img1"><img src="images/draw_Illust/Akira1.jpeg" alt="ポニテ水晶さん"></a><p>ポニテ水晶さん</p></div>
+                            <div class="illust_kakomu"><a href="#lightbox-img2"><img src="images/draw_Illust/Akira2.jpeg" alt="紫水晶さんデザ練り"></a><p>紫水晶さんデザ練り</p></div>
+                            <div class="illust_kakomu"><a href="#lightbox-img3"><img src="images/draw_Illust/Higurashi1.jpeg" alt="ウィンクひぐらし"></a><p>ウィンクひぐらし</p></div>
+                            <div class="illust_kakomu"><a href="#lightbox-img4"><img src="images/draw_Illust/Kagome2.png" alt="かごめさん01"></a><p>かごめさん01</p></div>
+                            <div class="illust_kakomu"><a href="#lightbox-img5"><img src="images/draw_Illust/Kagome4.jpeg" alt="プル夜-いわひらパロ"></a><p>プル夜-いわひらパロ</p></div>
+                            <div class="illust_kakomu"><a href="#lightbox-img6"><img src="images/draw_Illust/Kagome5.jpeg" alt="プル夜自陣"></a><p>プル夜自陣</p></div>
+                            <div class="illust_kakomu"><a href="#lightbox-img7"><img src="images/draw_Illust/miniChara_Me.jpeg" alt="うちのこミニキャラ"></a><p>うちのこミニキャラ</p></div>
+                            <div class="illust_kakomu"><a href="#lightbox-img8"><img src="images/draw_Illust/Onasora_Chara.jpeg" alt="おなそらデザ練り"></a><p>おなそらデザ練り</p></div>
+                           <div class="illust_kakomu"><a href="#lightbox-img9"><img src="images/draw_Illust/Panko4.jpeg" alt="シルクぱんこ"></a><p>シルクぱんこ</p></div>
+                            <div class="illust_kakomu"><a href="#lightbox-img10"><img src="images/draw_Illust/Pikari_Charashi.jpeg" alt="初期立ち絵"></a><p>初期ピカリ立ち絵</p></div>
+                            <div class="illust_kakomu"><a href="#lightbox-img11"><img src="images/draw_Illust/Pikari_Design.jpeg" alt="初期ピカリ"></a><p>初期ピカリ練り</p></div>
+                            <div class="illust_kakomu"><a href="#lightbox-img12"><img src="images/draw_Illust/Pikari3_Meido.jpeg" alt="ゴシックピカリ"></a><p>ゴシックピカリ</p></div>
+                            <div class="illust_kakomu"><a href="#lightbox-img13"><img src="images/draw_Illust/Pikari7.jpeg" alt="funピカリ"></a><p>楽しそうなピカリ</p></div>
+                            <div class="illust_kakomu"><a href="#lightbox-img14"><img src="images/draw_Illust/Pikari10.jpeg" alt="ブラックピカリ"></a><p>ブラックピカリ</p></div>
+                            <div class="illust_kakomu"><a href="#lightbox-img15"><img src="images/draw_Illust/Puruyoru.jpeg" alt="クレヨンプル夜"></a><p>クレヨンプル夜</p></div>
+                            <div class="illust_kakomu"><a href="#lightbox-img16"><img src="images/draw_Illust/Puruyoru1.jpeg" alt="IIIプル夜"></a><p>IIIプル夜</p></div>
+                            <div class="illust_kakomu"><a href="#lightbox-img17"><img src="images/draw_Illust/Shirasawa1.jpeg" alt="ひぐらしと白沢"></a><p>ひぐらしと白沢</p></div>
+                            <div class="illust_kakomu"><a href="#lightbox-img18"><img src="images/draw_Illust/Yonin_miniChara.jpeg" alt="2PLミニキャラ"></a><p>2PLミニキャラ</p></div>
+                            
+                          </div>
+                           <!-------------------------------------------引用参考箇所-------------------------------------------------------------->
+                          <div id="lightbox-img1" class="lightbox-overlay">
+                            <a href="#_" class="lightbox-close">&times;</a>
+                            <div class="lightbox-content">
+                              <img src="images/draw_Illust/Akira1.jpeg" alt="風景1">
+                              <p class="lightbox-caption">ポニテverの紫水晶さん</p>
+                            </div>
+                          </div>
+                          
+                          <div id="lightbox-img2" class="lightbox-overlay">
+                            <a href="#_" class="lightbox-close">&times;</a>
+                            <div class="lightbox-content">
+                              <img src="images/draw_Illust/Akira2.jpeg" alt="風景2">
+                              <p class="lightbox-caption">紫水晶さんのデザイン練り</p>
+                            </div>
+                          </div>
+                          
+                          <div id="lightbox-img3" class="lightbox-overlay">
+                            <a href="#_" class="lightbox-close">&times;</a>
+                            <div class="lightbox-content">
+                              <img src="images/draw_Illust/Higurashi1.jpeg" alt="風景3">
+                              <p class="lightbox-caption">ウィンク指ハートのひぐらしさん</p>
+                            </div>
+                          </div>
+                          
+                          <div id="lightbox-img4" class="lightbox-overlay">
+                                <a href="#_" class="lightbox-close">&times;</a>
+                                <div class="lightbox-content">
+                                  <img src="images/draw_Illust/Kagome2.png" alt="風景3">
+                                  <p class="lightbox-caption">プル夜卓中のかごめさん</p>
+                                </div>
+                              </div>
+                          
+                          <div id="lightbox-img5" class="lightbox-overlay">
+                            <a href="#_" class="lightbox-close">&times;</a>
+                            <div class="lightbox-content">
+                              <img src="images/draw_Illust/Kagome4.jpeg" alt="風景3">
+                              <p class="lightbox-caption">プル夜自陣の鰯と柊パロ</p>
+                            </div>
+                          </div>
+                          
+                          <div id="lightbox-img6" class="lightbox-overlay">
+                                <a href="#_" class="lightbox-close">&times;</a>
+                                <div class="lightbox-content">
+                                  <img src="images/draw_Illust/Kagome5.jpeg" alt="風景3">
+                                  <p class="lightbox-caption">プル夜自陣のエンドカード</p>
+                                </div>
+                              </div>
+                          
+                          <div id="lightbox-img7" class="lightbox-overlay">
+                            <a href="#_" class="lightbox-close">&times;</a>
+                            <div class="lightbox-content">
+                              <img src="images/draw_Illust/miniChara_Me.jpeg" alt="風景3">
+                              <p class="lightbox-caption">うちのこたちのミニキャライラスト</p>
+                            </div>
+                          </div>
+                          
+                          <div id="lightbox-img8" class="lightbox-overlay">
+                            <a href="#_" class="lightbox-close">&times;</a>
+                            <div class="lightbox-content">
+                              <img src="images/draw_Illust/Onasora_Chara.jpeg" alt="風景3">
+                              <p class="lightbox-caption">同じ空には登れない。HO太陽練り</p>
+                            </div>
+                          </div>
+                          
+                          <div id="lightbox-img9" class="lightbox-overlay">
+                            <a href="#_" class="lightbox-close">&times;</a>
+                            <div class="lightbox-content">
+                              <img src="images/draw_Illust/Panko4.jpeg" alt="風景3">
+                              <p class="lightbox-caption">シルクスクリーンのぱんこ。</p>
+                            </div>
+                          </div>
+                          
+                          <div id="lightbox-img10" class="lightbox-overlay">
+                            <a href="#_" class="lightbox-close">&times;</a>
+                            <div class="lightbox-content">
+                              <img src="images/draw_Illust/Pikari_Charashi.jpeg" alt="風景3">
+                              <p class="lightbox-caption">初期のピカリ立ち絵・ディスプレイ</p>
+                            </div>
+                          </div>
+                          
+                          <div id="lightbox-img11" class="lightbox-overlay">
+                            <a href="#_" class="lightbox-close">&times;</a>
+                            <div class="lightbox-content">
+                              <img src="images/draw_Illust/Pikari_Design.jpeg" alt="風景3">
+                              <p class="lightbox-caption">ピカリの初期衣装デザイン</p>
+                            </div>
+                          </div>
+                          
+                          <div id="lightbox-img12" class="lightbox-overlay">
+                            <a href="#_" class="lightbox-close">&times;</a>
+                            <div class="lightbox-content">
+                              <img src="images/draw_Illust/Pikari3_Meido.jpeg" alt="風景3">
+                              <p class="lightbox-caption">ゴシックな衣装のピカリ</p>
+                            </div>
+                          </div>
+                          
+                          <div id="lightbox-img13" class="lightbox-overlay">
+                            <a href="#_" class="lightbox-close">&times;</a>
+                            <div class="lightbox-content">
+                              <img src="images/draw_Illust/Pikari7.jpeg" alt="風景3">
+                              <p class="lightbox-caption">楽しそうなピカリ</p>
+                            </div>
+                          </div>
+                          
+                          <div id="lightbox-img14" class="lightbox-overlay">
+                            <a href="#_" class="lightbox-close">&times;</a>
+                            <div class="lightbox-content">
+                              <img src="images/draw_Illust/Pikari10.jpeg" alt="風景3">
+                              <p class="lightbox-caption">ブラックなverのピカリ</p>
+                            </div>
+                          </div>
+                          
+                          <div id="lightbox-img15" class="lightbox-overlay">
+                            <a href="#_" class="lightbox-close">&times;</a>
+                            <div class="lightbox-content">
+                              <img src="images/draw_Illust/Puruyoru.jpeg" alt="風景3">
+                              <p class="lightbox-caption">クレヨン風の身内卓プル夜</p>
+                            </div>
+                          </div>
+                          
+                          <div id="lightbox-img16" class="lightbox-overlay">
+                            <a href="#_" class="lightbox-close">&times;</a>
+                            <div class="lightbox-content">
+                              <img src="images/draw_Illust/Puruyoru1.jpeg" alt="風景3">
+                              <p class="lightbox-caption">III曲パロの身内卓プル夜</p>
+                            </div>
+                          </div>
+                          
+                          <div id="lightbox-img17" class="lightbox-overlay">
+                            <a href="#_" class="lightbox-close">&times;</a>
+                            <div class="lightbox-content">
+                              <img src="images/draw_Illust/Shirasawa1.jpeg" alt="風景3">
+                              <p class="lightbox-caption">ひぐらしと白沢</p>
+                            </div>
+                          </div>
+                          
+                          <div id="lightbox-img18" class="lightbox-overlay">
+                            <a href="#_" class="lightbox-close">&times;</a>
+                            <div class="lightbox-content">
+                              <img src="images/draw_Illust/Yonin_miniChara.jpeg" alt="風景3">
+                              <p class="lightbox-caption">2PLのうちのこたちのミニキャラ</p>
+                            </div>
+                          </div>
+                          <!-------------------------------------------引用参考箇所終了-------------------------------------------------------------->
+
+ <div class="home_button_top">                   
+<div class="home_button">
+        <a href="index.html"><img src="images/hidtory_html/homebutton.webp" width="382" height="105" alt="home"></a>
+    </div>
+</div>    
+    </main>
+</body>
+</html>
