@@ -221,7 +221,7 @@ display: block;
   /* 高さをvwで指定することで、画面幅に合わせて全体の比率を維持します */
   height: min(55.55vw, 600px); 
   margin: 0 auto;
-  margin-top: -50px;
+  margin-top:  max(-4.62vw, -50px);
   overflow: hidden;
 }
 
@@ -343,6 +343,7 @@ text-align :center;
 
 .tenten svg{
   width:min(11.57vw,125px);
+  height: auto;
 }
 
 .matome_shokai_kukuru{
@@ -355,7 +356,7 @@ text-align :center;
   padding-right:0px;
   padding-bottom:min(4.6vw,50px);
   padding-left:0px;
-  box-shadow: 28px 36px #6F0C76;
+  box-shadow: min(2.59vw,28px) min(3.33vw,36px) 0 0 #6F0C76;
   
   margin: 0 auto;
   
@@ -798,6 +799,11 @@ footer a{
 .mini_Yu2 img{
   width: min(30.55vw,330px);
   height: min(31.01vw,335px);
+}
+
+.x_icon img{
+  width: min(10vw,100px);
+  height: min(10vw,100px);
 }
 
 
