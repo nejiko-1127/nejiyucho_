@@ -1108,6 +1108,11 @@ main{
        text-size-adjust: 100%;
 }
 
+body {
+  -webkit-text-size-adjust: 100%;
+}
+
 td {
   -webkit-text-size-adjust: 100%;
 }
+
