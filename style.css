@@ -1003,6 +1003,8 @@ text-align:left;
     position: absolute;
     z-index: 0;
     padding-top: min(46.29vw,500px);
+ 
+    width: 100vw;
 }
 
 .seat section{
@@ -1087,4 +1089,5 @@ text-align:left;
    zoom: 0.5;
  }
 }
+
 
