@@ -1,1089 +1,512 @@
-@charset "UTF-8";
-
-  *{
-    margin: 0;
-    padding: 0;
-  }
-
-  html{
-
-    scroll-behavior: smooth;
-    font-size: calc(100vw / 108)
-  }
-  img{
-    vertical-align: bottom;
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ねじゆ～帳</title>
+    <link rel="stylesheet" href="style.css">
     
-  }
-  
-  li{
-    list-style: none;
-  }
-
-  body{
-  background-color: whitesmoke
-  }
-
-  main{
-    margin: 0 auto;
-    background-image: url(images/background.webp) ;
-    background-attachment: fixed;
-    position: relative;
-  }
-  
-  .Lside {
-    position: fixed;
-    top: 0;
-    /* 1. まず画面の真ん中に持ってくる */
-    left: 50%; 
-    /* 2. mainの幅の半分(540px)だけ右にずらす */
-    /* 1080pxのデザインなら 540px、vwを使っているならその半分を足す */
-    margin-left: min(50vw, 540px); 
-  margin-top:-20px;
-    z-index: 1000;
-  }
-  
-  .Lside svg {
-    width: 44px;
-    display: block;
-  }
-  
-.Rside_relative{
-  position: relative;
-}
-.Rside{
-
-position: fixed;
-margin-top:-20px;
-margin-left:-45px;
-z-index: 1000;
-}
-
-
-
-p{
-  font-family: "Lexend Mega","ta-marugo-gf-03", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  text-align: center;
-  color: #6F0C76;
-}
-
-a{
-  font-family: "Lexend Mega","ta-marugo-gf-03", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  text-align: center;
-  color: #6F0C76;
-  text-decoration: none;
-}
-
-h1{
-  
-  font-family: "Lexend Mega","ta-marugo-gf-03", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  text-align: center;
-}
-
-.About{
-  position: relative;
-}
-
-.Character{
-  position: relative;
-}
-
-#a_About{
-  position: absolute;
-  margin-top:-400px;
-}
-
-#a_Character{
-  position: absolute;
-  margin-top:-200px;
-}
-
-#a_Illust{
-  position: absolute;
-  margin-top:-200px;
-}
-
-#a_History{
-  position: absolute;
-  margin-top:-200px;
-}
-
-.space {
-  height: min(23.1vw,250px);
-}
-
-header{
-  width: min(100vw, 1080px);
-  flex-wrap: nowrap;
-  
-  position: fixed;
-  z-index: 100;
-  top: 0;
-
-}
-
-.header_u{
-  margin: 0;         /* pタグの隙間を消す */
-  line-height: 0;    /* 行間の隙間を消す */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: -1;
-}
-
-.header_u svg{
-  width: 100%;
-  height: auto;      /* 高さを自動にして比率を守らせる */
-  display: block;    /* インライン要素の隙間を消す */
-  filter: drop-shadow(0 4px 4px rgba(0,0,0,0.25)); /* SVG内のfilterが重い場合はCSSでも可 */
-}
-
-.menu a{
-  
-color: #0C46B2;
-text-decoration: none;
-
-justify-content: center;
-
-display: block;
-}
-
-
-.menu ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-}
-
-.menu li {
-  border-right: min(0.5vw,4px) solid #C0E7FF;
-  
-  margin-top:min(4vw,45px);
-}
-
-.menu li:last-child {
-  border-right: none;
-}
-
-.header_history{
-  border-right: none;
-}
-
-.menu li a {
-  display: block;
-  font-size: min(3.2rem,32px);
-  color: #004bb1;
-  padding-left:min(3.2vw,35px);
-  padding-right:min(3.2vw,35px);
-}
-
-.header_about{
-  padding-left: 20px;
-}
-
-
-.Main p{
-  position: relative;
-  margin-top: min(1.85vx,20px); 
-}
-
-.Main h1 img{
-  position: absolute;
-  margin-top: max(-9.25vw,-100px);
-  z-index: 2;
-  left:0;
-  right:0;
-  margin-left:min(18.5vw,200px);
-  width:min(65.9vw,712px);
-  height: min(19vw,206px);
-}
-
-.mainIllust img{
-  border-radius: 60px 60px 0 0;
-  
-  width:min(100vw,1080px);
-  height: min(120vw,1300px);
-}
-
-
-.About {
-  background-color: #81ABFF;
-  position: relative;
-  width: 100%;
-  max-width: 1080px;
-  /* 高さをvwで指定することで、画面幅に合わせて全体の比率を維持します */
-  height: min(55.55vw, 600px); 
-  margin: 0 auto;
-  margin-top:  max(-4.62vw, -50px);
-  overflow: hidden;
-}
-
-/* 共通設定：中心を基準にする */
-.about_yu, .peta, .kami, .About h1 {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  /* transformは各要素で個別に調整するため、ここでは定義しません */
-}
-
-.About_bunsyo{
-  
-  vertical-align: left;
-  margin-top:300px;
-  margin-left:500px;
-  position: relative;
-  z-index: 6;
-  
-text-align :center;
-}
-
-/* --- 1. 土台の「紙」 --- */
-.kami {
-  z-index: 1;
-  /* 紙を中央から少し上に配置（数値は微調整してください） */
-  transform: translate(-50%, -45%);
-}
-.kami svg {
-  width: min(85vw, 918px);
-  height: auto;
-}
-
-/* --- 2. ABOUTの大きなロゴ --- */
-.About h1 {
-  z-index: 3;
-  /* タイトルを紙の上のほうへ固定 */
-  transform: translate(-50%, -160%);
-  margin: 0;
-}
-.About h1 p {
-  font-size: min(6vw, 64px); /* 文字もvwで縮小させる */
-  color: #6F0C76;
-}
-
-/* --- 3. 【重要】文章部分（箱は中央、中身は左） --- */
-.About_bunsyo {
-  position: absolute; /* relativeからabsoluteに変更 */
-  top: 50%;
-  left: 50%;
-  z-index: 6;
-  
-  /* 文章の「箱」自体の幅 */
-  width: min(64.81vw, 700px); 
-  
-  /* 箱の位置調整：左に55%ずらし、縦は中央(0%)に */
-  transform: translate(-55%, -60%); 
-
-  /* これが左寄せの正解です */
-  text-align: left; 
-  list-style: none;
-  padding: 0;
-  margin: 0; /* 余計なmarginをリセット */
-}
-
-.About_bunsyo p {
-  font-size: min(2.2vw, 24px); /* 文字サイズもvw連動 */text-align: left; /* 念のためここにも */
-}
-
-/* --- 4. 付箋（peta） --- */
-.peta {
-  z-index: 4;
-  /* 紙の左上に配置されるように調整 */
-  transform: translate(-140%, -220%);
-}
-.peta svg {
-  width: min(25vw, 270px);
-}
-
-/* --- 5. キャラクター（yu） --- */
-.about_yu {
-  z-index: 10;
-  /* キャラクターを右下へ配置 */
-  transform: translate(50%, -40%);
-}
-.about_yu img {
-  width: min(35vw, 378px);
-  height: auto;
-}
-
-  .Obi{
-    text-align: center;
-   }
-
-   .Obi img{
-    width:min(100vw,1080px);
-    height: min(10.3vw,112px);
-   }
-
-/*---------------------------------キャラ紹介------------------------------------------*/
-
-
-
-.character_LOGO{
-  text-align: center;
-  margin: min(11.11vw,120px);
-
-}
-
-.character_LOGO svg{
-  width:min(52.68vw,569px);
-}
-
-.tenten{
-  position: absolute;
-  margin-top: min(3.24vw,35px);; 
-  margin-left:min(11.11vw,120px);
-}
-
-.tenten svg{
-  width:min(11.57vw,125px);
-  height: auto;
-}
-
-.matome_shokai_kukuru{
-  width:min(87.9vw,950px);
-  
-  border-radius:min(6.29vw,68px);/*角丸半径*/
-  background: #EE38FF;
-  border:min(0.46vw,5px) solid #6F0C76;/*枠線設定*/
-  padding-top:min(8.33vw,90px);
-  padding-right:0px;
-  padding-bottom:min(4.6vw,50px);
-  padding-left:0px;
-  box-shadow: min(2.59vw,28px) min(3.33vw,36px) 0 0 #6F0C76;
-  
-  margin: 0 auto;
-  
-}
-
-
-.matome_shokai{
-  width: min(78.1vw,844px);
-  margin: 0 auto;
-  border: min(0.46vw,5px) solid #6F0C76;
-  background-color:white;
-  border-bottom-right-radius:min(5vw,54px);/*角丸半径右下*/
-  border-bottom-left-radius:min(5vw,54px);/*角丸半径左下*/
-  border:min(0.46vw,5px) solid #6F0C76;/*枠線設定*/
-  
-}
-
-
-.shokaitati{
-  display:flex;
-  justify-content: center;
-  flex-wrap:wrap;
-  padding-top:min(4.62vw,50px);
-  padding-bottom:min(4.62vw,50px);
-  padding-left:min(5.55vw,60px);
-  padding-right: min(5.55vw,60px);
-}
-
-.shokai{
-  width: min(31.4vw, 340px);
-  height: min(40.2vw, 435px);
-  position: relative;
-  margin: 0 auto;
-  /* 下からはみ出さないように設定（必要に応じて） */
-  overflow: hidden;
-}
-  
-.shokai_gazo{
-  position: relative;
-  text-align: center;
-  margin-top:min(6.48vw,70px);
-  margin-left:auto;
-  margin-right:auto;
-  margin-bottom:min(0.92vw,10px);
-}
-
-
-
-.name_line{
-  text-align: center;
-  font-size: min(4.0rem,40px);
-  background: linear-gradient(transparent 50%, #a8eaff 50%);
-}
-
-.tagu{
-  text-align: center;
-  font-size: min(2.4rem,24px);
-}
-
-.chara img{
-  
-  width:min(30vw,329px);
-  height: min(23.1vw,250px);
-}
-
-.chara{
-  position: absolute;
-  top:max(-5.462vw,-59px);
-  left:min(0.3703vw,4px);
-}
-
-.kakushi{
-  position: absolute;
-  /* 親の底辺にぴったり合わせる */
-  bottom: min(0.74074vw,8px); /* 1pxの隙間も許さない場合はマイナス指定 */
-  left: 47%;
-  transform: translateX(-47%);
-  /* 親の幅に対してどれくらいのサイズにするか（例：親の76%） */
-  width: 76%; 
-  line-height: 0;
-}
-
-.kakushi svg{/* 親の .kakushi の幅いっぱいに広がるようにする */
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.file img{
-  width: min(24.3vw,263px);
-  height: min(18.7vw,203px);
-}
-
-.Character section h2 p{
-text-align: center;
-color: white;
-font-size: min(6.4rem,64px);
-margin-top: min(27.7vw,300px);
-margin-bottom: min(27.7vw,300px);
-}
-
-
-
-.shokai{
-  
-  transition: transform 0.3s ease;
-}
-
-.chara{
-  transition: transform 0.3s ease;
-}
-
-
-.file:hover {
-  transform: translateY(-0.3vw);
-}
-
-.chara:hover {
-  transform: translateY(-0.9vw);
-  box-shadow    : 0 0 20px #0000;
-}
-
-.shokai:hover {
-  transform: translateY(-10px);
-}
-
-/*.sayuri_S{
-  margin-bottom:0px;
-}*/
-
-
-/*---------------------------------キャラ紹介おわり------------------------------------------*/
-
-.illustration{
-  position: relative;
-}
-
-.illust_background{
-position: absolute;
-z-index: 0;
-top:0;
-}
-
-.illust_background svg{
-  
-width: min(100vw,1080px);
-height: min(156.75vw,1693px);
-
-}
-
-.illust_moji{
-  position: relative;
-  z-index: 1;
-  font-size:min(1.6rem,16px);
-}
-
-.illust_LOGO svg{
-  width: min(50vw,540px);
-  margin: 0 auto;
-  
-  margin-top: min(13.88vw,150px); 
-  margin-bottom: min(9.25vw,100px); 
-position: relative;
-z-index: 1;
-}
-
-.hidden {
-  margin-top: min(5.55vw, 60px);
-  width: 100%; /* 1080px固定ではなく100%に */
-  max-width: 1080px;
-  position: relative;
-  overflow: hidden; /* xだけでなく全体をカバー */
-}
-
-.hidden svg{
- width:  min(146.29vw,1580px); 
-}
-
-
-.hidden img{
-  width:  min(200vw,2157px); 
-  
-  height: min(27.4vw,296px);
- }
+    <!-- 丸ゴ 3-->
+    <script>
+            (function(d) {
+              var config = {
+                kitId: 'xeu6bne',
+                scriptTimeout: 3000,
+                async: true
+              },
+              h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+            })(document);
+          </script>
+
+<!-- 英字フォント-->
+
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@100..900&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <main id="scalable-content">
+     <!---------------------------------------------------     header     ---------------------------------------------------------------------------->
+    <header>
+        
+            <p class="header_u"><svg width="1080" height="136" viewBox="0 0 1080 136" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d_39_4)">
+                <path d="M0 0H1080V49C1080 92.6305 1044.63 128 1001 128H79C35.3695 128 0 92.6305 0 49V0Z" fill="#83CBFF"/>
+                </g>
+                <defs>
+                <filter id="filter0_d_39_4" x="-4" y="0" width="1088" height="136" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dy="4"/>
+                <feGaussianBlur stdDeviation="2"/>
+                <feComposite in2="hardAlpha" operator="out"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_39_4"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_39_4" result="shape"/>
+                </filter>
+                </defs>
+                </svg>
+                </p>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#a_About" class="header_about">ABOUT</a></li>
+                    <li><a href="#a_Character" class="header_character">CHARACTER</a></li>
+                    <li><a href="#a_Illust">ILLUST</a></li>
+                    <li><a href="#a_History" class="header_history">HISTORY</a></li>
+                </ul>
+            </nav>
+    </header>
+    <div Lside_relative>
+    <div class=Lside><svg width="44" height="4096" viewBox="0 0 44 4096" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="40" height="4320" fill="white" stroke="#6F0C76" stroke-width="4"/>
+        </svg>
+        
+        </div></div>
+        
+    <div Rside_relative>
+            <div class=Rside><svg width="44" height="4096" viewBox="0 0 44 4096" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="40" height="4320" fill="white" stroke="#6F0C76" stroke-width="4"/>
+                </svg>
+                
+                </div></div>
+
+ <!---------------------------------------------------     main     ---------------------------------------------------------------------------->
+
+    <div class="Main">
+            <div class="space"></div>
+            <h1><img src="images/0main/LOGO.webp" width="712" height="206" alt="LOGO"></h1>
+            <p class="mainIllust"><img src="images/0main/Illust.webp" width="1080" height="1300" alt="mainIllust"></p>
+    
+        </div>
+
+ <!---------------------------------------------------     About     ---------------------------------------------------------------------------->
+
+    <article class="About">
+        
+        <section>
+           <div class="about_yu"> <img src="images/1About/Stecker_Yu.webp" width="373" height="485"></div>
+            <p class="peta">
+
+                
+            </p>
+            <section>
+                
+            <h1>
+            
+                    <a id="a_About"></a>
+                    <p>ABOUT</p>
+                    </h1>
+             <ul class="About_bunsyo">
+             <li><p>本サイトは、ねじょのTRPGにおけるオリジナル</p></li> 
+             <li><p> 創作キャラクター(探索者)たちをまとめた資料的サイトです。</p></li> 
+             <li><p> 自"ゆう"帳として、新たな物語の一ページを、 </p></li> 
+             
+             <li><p> 書き込んでいきます。</p></li> 
+             </ul> 
+             <p class="kami"><svg width="882" height="489" viewBox="0 0 882 489" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="848.061" height="402.625" transform="matrix(0.99718 -0.0750413 0.0735507 0.997292 6.23764 79.2494)" fill="white"/>
+                <rect x="1.6291" y="1.35468" width="845.128" height="399.594" transform="matrix(0.995686 -0.0927873 0.0903791 0.995907 -0.115407 87.5616)" stroke="#6F0C76" stroke-width="3"/>
+                <path d="M547.301 18.9895L324.203 27.3392C321.583 27.4373 320.341 30.6111 322.197 32.4617L329.007 39.2513C330.159 40.4 330.186 42.2578 329.067 43.439L322.528 50.3419C321.718 51.1969 321.484 52.4468 321.928 53.5374L325.122 61.3728C325.489 62.2732 325.397 63.2958 324.875 64.1162L318.564 74.0304C317.26 76.0788 318.803 78.7469 321.229 78.6383L558.941 68.0016C561.976 67.8658 562.91 63.8218 560.241 62.3695L547.92 55.6646C546.068 54.6569 545.806 52.1038 547.414 50.7408L550.91 47.7787C552.274 46.6222 552.33 44.536 551.029 43.3082L542.973 35.7046C541.784 34.5822 541.712 32.7141 542.813 31.5044L549.633 24.006C551.421 22.0394 549.958 18.8901 547.301 18.9895Z" fill="#FBB0FF"/>
+                <path d="M557.51 27.4433L334.412 35.793C331.793 35.891 330.55 39.0648 332.406 40.9154L339.216 47.7051C340.369 48.8538 340.395 50.7115 339.276 51.8927L332.738 58.7956C331.928 59.6507 331.693 60.9005 332.138 61.9912L335.332 69.8265C335.699 70.727 335.607 71.7496 335.084 72.5699L328.774 82.4841C327.47 84.5326 329.013 87.2006 331.439 87.0921L569.15 76.4553C572.186 76.3195 573.119 72.2756 570.45 70.8232L558.129 64.1184C556.277 63.1107 556.015 60.5575 557.623 59.1945L561.119 56.2324C562.484 55.0759 562.539 52.9897 561.238 51.7619L553.182 44.1584C551.993 43.036 551.922 41.1678 553.022 39.9581L559.842 32.4597C561.631 30.4931 560.167 27.3438 557.51 27.4433Z" fill="#C0E7FF"/>
+                <path d="M324.259 28.8385L547.357 20.4885C548.685 20.4388 549.417 22.0136 548.523 22.9969L541.703 30.4946C540.052 32.3093 540.16 35.1123 541.944 36.796L549.999 44.3993C550.65 45.0132 550.622 46.0559 549.939 46.6341L546.444 49.5961C544.032 51.6406 544.425 55.4711 547.202 56.9826L559.523 63.6868C560.858 64.4129 560.392 66.4346 558.874 66.5027L321.162 77.1397C319.949 77.1939 319.177 75.8599 319.829 74.8357L326.141 64.9218C326.924 63.6914 327.062 62.1576 326.512 60.8069L323.317 52.9712C323.095 52.4259 323.212 51.8008 323.617 51.3733L330.156 44.4706C331.834 42.6988 331.794 39.9125 330.066 38.1895L323.256 31.3994C322.328 30.4741 322.95 28.8875 324.259 28.8385Z" stroke="#6F0C76" stroke-width="3"/>
+                </svg>
+                
+            </p>
+           </section>      
+        </section>
+    </article>
+
+    <p class="Obi"><img src="images/0main/obi.webp" width="1080" height="112" alt="obi"> </p>
+        
+ <!---------------------------------------------------     character     ---------------------------------------------------------------------------->
+
+<article class="Character">
+        <a id="a_Character"></a>
+    <div>
+    <h1 class="character_LOGO">
+    <svg width="569" height="116" viewBox="0 0 569 116" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2.5" y="2.5" width="563.145" height="110.276" rx="50.5" fill="white"/>
+        <rect x="2.5" y="2.5" width="563.145" height="110.276" rx="50.5" stroke="#6F0C76" stroke-width="5"/>
+        <path d="M174.162 73.0379C172.029 73.0379 170.042 72.7046 168.202 72.0379C166.362 71.3446 164.749 70.3579 163.362 69.0779C162.002 67.7979 160.935 66.2779 160.162 64.5179C159.389 62.7313 159.002 60.7713 159.002 58.6379C159.002 56.6113 159.402 54.7313 160.202 52.9979C161.029 51.2646 162.135 49.7579 163.522 48.4779C164.935 47.1713 166.562 46.1713 168.402 45.4779C170.242 44.7579 172.202 44.3979 174.282 44.3979C175.935 44.3979 177.522 44.6246 179.042 45.0779C180.562 45.5313 181.935 46.1179 183.162 46.8379C184.415 47.5313 185.429 48.2913 186.202 49.1179L183.522 52.5579C182.615 51.7579 181.669 51.0779 180.682 50.5179C179.722 49.9313 178.682 49.4779 177.562 49.1579C176.469 48.8379 175.295 48.6779 174.042 48.6779C172.655 48.6779 171.322 48.9179 170.042 49.3979C168.789 49.8513 167.655 50.5179 166.642 51.3979C165.655 52.2779 164.869 53.3313 164.282 54.5579C163.695 55.7846 163.402 57.1446 163.402 58.6379C163.402 60.2646 163.695 61.7046 164.282 62.9579C164.895 64.2113 165.722 65.2779 166.762 66.1579C167.802 67.0113 168.989 67.6646 170.322 68.1179C171.682 68.5713 173.122 68.7979 174.642 68.7979C175.975 68.7979 177.189 68.6246 178.282 68.2779C179.402 67.9046 180.415 67.4513 181.322 66.9179C182.229 66.3579 183.042 65.7713 183.762 65.1579L185.882 68.7179C185.189 69.3846 184.229 70.0513 183.002 70.7179C181.802 71.3846 180.442 71.9446 178.922 72.3979C177.402 72.8246 175.815 73.0379 174.162 73.0379ZM211.045 72.6379V44.6379H215.365V72.6379H211.045ZM189.205 72.6379V44.6379H193.525V72.6379H189.205ZM191.085 60.8779V56.7179H212.965V60.8779H191.085ZM217.365 72.6379L230.005 44.6379H234.845L247.405 72.6379H242.685L234.365 54.2379C234.205 53.8379 234.005 53.3579 233.765 52.7979C233.525 52.2113 233.272 51.6113 233.005 50.9979C232.765 50.3846 232.525 49.7713 232.285 49.1579C232.072 48.5446 231.885 47.9979 231.725 47.5179L232.885 47.4779C232.672 48.0379 232.445 48.6246 232.205 49.2379C231.992 49.8513 231.765 50.4646 231.525 51.0779C231.285 51.6646 231.045 52.2379 230.805 52.7979C230.565 53.3579 230.339 53.8913 230.125 54.3979L221.845 72.6379H217.365ZM222.885 65.9179L224.565 61.7579H239.765L240.885 65.9179H222.885ZM249.394 72.6379V44.6379H264.154C265.781 44.6379 267.274 45.0246 268.634 45.7979C269.994 46.5713 271.087 47.6246 271.914 48.9579C272.741 50.2646 273.154 51.7313 273.154 53.3579C273.154 54.9846 272.714 56.4779 271.834 57.8379C270.981 59.1713 269.834 60.2379 268.394 61.0379C266.954 61.8379 265.367 62.2379 263.634 62.2379H253.714V72.6379H249.394ZM269.234 72.6379L260.594 59.9979L265.154 58.9979L274.594 72.6779L269.234 72.6379ZM253.714 58.0779H263.514C264.447 58.0779 265.301 57.8646 266.074 57.4379C266.847 57.0113 267.461 56.4379 267.914 55.7179C268.367 54.9979 268.594 54.2113 268.594 53.3579C268.594 52.4779 268.354 51.7046 267.874 51.0379C267.394 50.3446 266.727 49.7979 265.874 49.3979C265.047 48.9979 264.127 48.7979 263.114 48.7979H253.714V58.0779ZM275.132 72.6379L287.772 44.6379H292.612L305.172 72.6379H300.452L292.132 54.2379C291.972 53.8379 291.772 53.3579 291.532 52.7979C291.292 52.2113 291.039 51.6113 290.772 50.9979C290.532 50.3846 290.292 49.7713 290.052 49.1579C289.839 48.5446 289.652 47.9979 289.492 47.5179L290.652 47.4779C290.439 48.0379 290.212 48.6246 289.972 49.2379C289.759 49.8513 289.532 50.4646 289.292 51.0779C289.052 51.6646 288.812 52.2379 288.572 52.7979C288.332 53.3579 288.106 53.8913 287.892 54.3979L279.612 72.6379H275.132ZM280.652 65.9179L282.332 61.7579H297.532L298.652 65.9179H280.652ZM319.42 73.0379C317.287 73.0379 315.3 72.7046 313.46 72.0379C311.62 71.3446 310.007 70.3579 308.62 69.0779C307.26 67.7979 306.193 66.2779 305.42 64.5179C304.647 62.7313 304.26 60.7713 304.26 58.6379C304.26 56.6113 304.66 54.7313 305.46 52.9979C306.287 51.2646 307.393 49.7579 308.78 48.4779C310.193 47.1713 311.82 46.1713 313.66 45.4779C315.5 44.7579 317.46 44.3979 319.54 44.3979C321.193 44.3979 322.78 44.6246 324.3 45.0779C325.82 45.5313 327.193 46.1179 328.42 46.8379C329.673 47.5313 330.687 48.2913 331.46 49.1179L328.78 52.5579C327.873 51.7579 326.927 51.0779 325.94 50.5179C324.98 49.9313 323.94 49.4779 322.82 49.1579C321.727 48.8379 320.553 48.6779 319.3 48.6779C317.913 48.6779 316.58 48.9179 315.3 49.3979C314.047 49.8513 312.913 50.5179 311.9 51.3979C310.913 52.2779 310.127 53.3313 309.54 54.5579C308.953 55.7846 308.66 57.1446 308.66 58.6379C308.66 60.2646 308.953 61.7046 309.54 62.9579C310.153 64.2113 310.98 65.2779 312.02 66.1579C313.06 67.0113 314.247 67.6646 315.58 68.1179C316.94 68.5713 318.38 68.7979 319.9 68.7979C321.233 68.7979 322.447 68.6246 323.54 68.2779C324.66 67.9046 325.673 67.4513 326.58 66.9179C327.487 66.3579 328.3 65.7713 329.02 65.1579L331.14 68.7179C330.447 69.3846 329.487 70.0513 328.26 70.7179C327.06 71.3846 325.7 71.9446 324.18 72.3979C322.66 72.8246 321.073 73.0379 319.42 73.0379ZM341.063 72.6379V48.7979H331.463V44.6379H355.263V48.7979H345.383V72.6379H341.063ZM357.624 72.6379V44.6379H378.824V48.7979H361.944V68.4779H378.824V72.6379H357.624ZM359.824 60.3579V56.1979H376.624V60.3579H359.824ZM383.285 72.6379V44.6379H398.045C399.671 44.6379 401.165 45.0246 402.525 45.7979C403.885 46.5713 404.978 47.6246 405.805 48.9579C406.631 50.2646 407.045 51.7313 407.045 53.3579C407.045 54.9846 406.605 56.4779 405.725 57.8379C404.871 59.1713 403.725 60.2379 402.285 61.0379C400.845 61.8379 399.258 62.2379 397.525 62.2379H387.605V72.6379H383.285ZM403.125 72.6379L394.485 59.9979L399.045 58.9979L408.485 72.6779L403.125 72.6379ZM387.605 58.0779H397.405C398.338 58.0779 399.191 57.8646 399.965 57.4379C400.738 57.0113 401.351 56.4379 401.805 55.7179C402.258 54.9979 402.485 54.2113 402.485 53.3579C402.485 52.4779 402.245 51.7046 401.765 51.0379C401.285 50.3446 400.618 49.7979 399.765 49.3979C398.938 48.9979 398.018 48.7979 397.005 48.7979H387.605V58.0779Z" fill="#6F0C76"/>
+        </svg>
+    </h1>
+    </div>
+    <div class="tenten"><svg width="125" height="32" viewBox="0 0 125 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M28.8783 15.6891C28.8783 22.9733 22.9733 28.8783 15.6891 28.8783C8.40498 28.8783 2.5 22.9733 2.5 15.6891C2.5 8.40498 8.40498 2.5 15.6891 2.5C22.9733 2.5 28.8783 8.40498 28.8783 15.6891Z" fill="white"/>
+        <path d="M74.8275 15.6891C74.8275 22.9733 68.9225 28.8783 61.6384 28.8783C54.3542 28.8783 48.4492 22.9733 48.4492 15.6891C48.4492 8.40498 54.3542 2.5 61.6384 2.5C68.9225 2.5 74.8275 8.40498 74.8275 15.6891Z" fill="white"/>
+        <path d="M121.628 15.6891C121.628 22.9733 115.723 28.8783 108.439 28.8783C101.154 28.8783 95.2494 22.9733 95.2494 15.6891C95.2494 8.40498 101.154 2.5 108.439 2.5C115.723 2.5 121.628 8.40498 121.628 15.6891Z" fill="white"/>
+        <path d="M28.8783 15.6891C28.8783 22.9733 22.9733 28.8783 15.6891 28.8783C8.40498 28.8783 2.5 22.9733 2.5 15.6891C2.5 8.40498 8.40498 2.5 15.6891 2.5C22.9733 2.5 28.8783 8.40498 28.8783 15.6891Z" stroke="#6F0C76" stroke-width="5"/>
+        <path d="M74.8275 15.6891C74.8275 22.9733 68.9225 28.8783 61.6384 28.8783C54.3542 28.8783 48.4492 22.9733 48.4492 15.6891C48.4492 8.40498 54.3542 2.5 61.6384 2.5C68.9225 2.5 74.8275 8.40498 74.8275 15.6891Z" stroke="#6F0C76" stroke-width="5"/>
+        <path d="M121.628 15.6891C121.628 22.9733 115.723 28.8783 108.439 28.8783C101.154 28.8783 95.2494 22.9733 95.2494 15.6891C95.2494 8.40498 101.154 2.5 108.439 2.5C115.723 2.5 121.628 8.40498 121.628 15.6891Z" stroke="#6F0C76" stroke-width="5"/>
+        </svg>
+        </div>
+    <article class="matome_shokai_kukuru">
+        <section class=" matome_shokai">
+           <ul class="shokaitati">
+            <li class="shokai panko">
+                <section class="shokai_gazo">
+
+                <a href="chara_1panko.html">
+                <div class="file"><img src="images/2Character/1Panko_File.webp" width="263" height="203" alt="panko_file"></div>
+
+                <div class="chara"><img src="images/2Character/1Panko_Chara.webp" width="341" height="409" alt="panko_image"></div>
+
+
+                <div class="kakushi"><svg width="259" height="42" viewBox="0 0 259 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.2578 0C17.2972 16.2681 31.179 28.8535 48 28.8535H210C226.821 28.8535 240.703 16.2681 242.742 0H258.678C258.678 28.3535 234.903 42 216.678 42H42C14.5 42 6.69424e-05 18.2253 0 0H15.2578Z" fill="#FF8DE4"/>
+                    </svg></div>  </a>
+                    
+                    
+                </section>
+
+                <section>
+                        <a href="#About"><h1 class="name"><p><span class="name_line">パンこ</span></p></h1></a>
+                <ul class="tagu">
+                <li><p>#パンこ</p></li>
+                <li><p>#デスバニア卓</p></li>
+                </ul>
+                </section>
+            </li>
+
+            <li class="shokai kagome">
+                    <section class="shokai_gazo">
+
+                            <a href="chara_2kagome.html">
+                    <p class="file"><img src="images/2Character/2Kagome_File.webp" width="263" height="203" alt="panko_file">
+                        
+        
+                        <p class="chara"><img src="images/2Character/2Kagome_Chara.webp" width="347" height="435" alt="panko_image"></p>
+        
+        
+                        <p class="kakushi"><svg width="259" height="42" viewBox="0 0 259 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.2578 0C17.2972 16.2681 31.179 28.8535 48 28.8535H210C226.821 28.8535 240.703 16.2681 242.742 0H258.678C258.678 28.3535 234.903 42 216.678 42H42C14.5 42 6.69424e-05 18.2253 0 0H15.2578Z" fill="#6E67FF"/>
+                                
+                            </svg></p> </a> 
+                            
+                            
+                    </section>
+
+                    <section>
+                        <h1 class="name"><p><span class="name_line">籠芽後面</span></p></h1>
+                        <ul class="tagu">
+                        <li><p>#刑事</p></li>
+                        <li><p>#CoC7版</p></li>
+                        <li><p>#デスバニア卓</p></li>
+                        </ul>
+                     </section>
+                </li>
+
+                <li class="shokai kagome">
+                        <section class="shokai_gazo">
+        
+                                <a href="chara_3pikari.html">
+                        <p class="file"><img src="images/2Character/3Pikari_File.webp" width="263" height="203" alt="panko_file"></p>
+        
+                        <p class="chara"><img src="images/2Character/3Pikari_Chara.webp" width="341" height="409" alt="panko_image"></p>
+        
+        
+                        <p class="kakushi"><svg width="259" height="42" viewBox="0 0 259 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.2578 0C17.2972 16.2681 31.179 28.8535 48 28.8535H210C226.821 28.8535 240.703 16.2681 242.742 0H258.678C258.678 28.3535 234.903 42 216.678 42H42C14.5 42 6.69424e-05 18.2253 0 0H15.2578Z" fill="#FFCF60"/>
+                            </svg></p>  </a>
+                            
+                            
+                        </section>
+        
+                        <section>
+                        <h1 class="name"><p><span class="name_line">ピカリ</span></p></h1>
+                        <ul class="tagu">
+                        <li><p>#怪盗</p></li>
+                        <li><p>#デスバニア卓</p></li>
+                        </ul>
+                        </section>
+                    </li>
+                    <li class="shokai shirasawa">
+                            <section class="shokai_gazo">
+            
+                                    <a href="chara_4shirasawa.html">
+                            <p class="file"><img src="images/2Character/4Shirasawa_File.webp" width="263" height="203" alt="panko_file"></p>
+            
+                            <p class="chara"><img src="images/2Character/4Shirasawa_Chara.webp" width="341" height="409" alt="panko_image"></p>
+            
+            
+                            <p class="kakushi"><svg width="259" height="42" viewBox="0 0 259 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.2578 0C17.2972 16.2681 31.179 28.8535 48 28.8535H210C226.821 28.8535 240.703 16.2681 242.742 0H258.678C258.678 28.3535 234.903 42 216.678 42H42C14.5 42 6.69424e-05 18.2253 0 0H15.2578Z" fill="#C3C3C3"/>
+                                </svg></p>  </a>
+                                
+                                
+                            </section>
+            
+                            <section>
+                            <h1 class="name"><p><span class="name_line">白沢 不知</span></p></h1>
+                            <ul class="tagu">
+                            <li><p>#エモクロア</p></li>
+                            <li><p>#デスバニア卓</p></li>
+                            </ul>
+                            </section>
+                        </li>
+
+                        <li class="shokai sayuri">
+                                <section class="shokai_gazo">
+
+                                        <a href="chara_5sayuri.html">
+                
+                                <p class="file"><img src="images/2Character/5Sayuri_File.webp" width="263" height="203" alt="panko_file"></p>
+                
+                                <p class="chara"><img src="images/2Character/5Sayuri_Chara.webp" width="341" height="409" alt="panko_image"></p>
+                
+                
+                                <p class=" sayuri_S kakushi"><svg width="260" height="132" viewBox="0 0 260 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.0266 39.542V85.002C15.0266 103.227 29.8012 118.002 48.0266 118.002H210.027C228 118.002 242.616 103.633 243.017 85.7559L259.027 89.002C259.027 117.355 234.93 131.148 216.704 131.148H42.0266C15.6964 131.148 1.28327 109.353 0.104767 91.502C0.0524123 90.7086 0.0266447 37.2772 0.0266418 36.502L15.0266 39.542Z" fill="#FF248A"/>
+                                    <rect y="2" width="15" height="41" fill="#FF248A"/>
+                                    <path d="M243.026 0L258.526 29.5001L259.026 89.0021H243.026V0Z" fill="#FF248A"/>
+                                    </svg>
+                                    </p>  </a>
+                                    
+                                    
+                                </section>
+                
+                                <section>
+                                <h1 class="name"><p><span class="name_line">寿 さゆり</span></p></h1>
+                                <ul class="tagu">
+                                <li><p>#お嬢様</p></li>
+                                </ul>
+                                </section>
+                            </li>
+                   <li class="shokai taiyo">
+                                    <section class="shokai_gazo">
+                    
+                                    <p class="file"><img src="images/2Character/10Taiyo_File.webp" width="263" height="203" alt="panko_file"></p>
+                    
+                                    <p class="chara"><img src="images/2Character/10Taiyo_Chara.webp" width="341" height="200" alt="panko_image"></p>
+                
+                    
+                                        
+                                    </section>
+                    
+                                    <section>
+                                    <h1 class="name"><p>？？？</p></h1>
+                                    <ul class="tagu">
+                                    <li><p>#コンビニ店員</p></li>
+                                    </ul>
+                                    </section>
+                                </li>
+                            <li class="shokai raku">
+                                    <section class="shokai_gazo">
+                    
+                                            <a href="chara_6raku.html">
+                                    <p class="file"><img src="images/2Character/6Raku_File.webp" width="263" height="203" alt="panko_file"></p>
+                    
+                                    <p class="chara"><img src="images/2Character/6Raku_Chara.webp" width="341" height="409" alt="panko_image"></p>
+                    
+                    
+                                    <p class="kakushi"><svg width="259" height="42" viewBox="0 0 259 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M258.678 0C258.678 28.3535 234.903 42 216.678 42H42C30.6002 42 21.4364 37.9122 14.6113 31.8301L28.3379 22.3594C33.8294 26.4397 40.6329 28.8535 48 28.8535H210C226.821 28.8535 240.703 16.2681 242.742 0H258.678ZM0.00683594 0.599609C0.00337182 0.399093 7.31776e-07 0.199229 0 0H0.876953L0.00683594 0.599609Z" fill="#DC64E5" fill-opacity="0.99"/>
+                                        </svg>
+                                        </p>  </a>
+                                        
+                                        
+                                    </section>
+                    
+                                    <section>
+                                    <h1 class="name"><p><span class="name_line">紫水 酪</span></p></h1>
+                                    <ul class="tagu">
+                                    <li><p>#紫水家</p></li>
+                                    <li><p>#デスバニア卓</p></li>
+                                    <li><p>#警察関係者</p></li>
+                                    </ul>
+                                    </section>
+                                </li>
+                                <li class="shokai yu">
+                                        <section class="shokai_gazo">
+                                                <a href="chara_7yu.html">
+                        
+                                        <p class="file"><img src="images/2Character/7Yu_File.webp" width="263" height="203" alt="panko_file"></p>
+                        
+                                        <p class="chara"><img src="images/2Character/7Yu_Chara.webp" width="341" height="409" alt="panko_image"></p>
+                        
+                        
+                                        <p class="kakushi"><svg width="259" height="42" viewBox="0 0 259 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.2578 0C17.2972 16.2681 31.179 28.8535 48 28.8535H210C226.821 28.8535 240.703 16.2681 242.742 0H258.678C258.678 28.3535 234.903 42 216.678 42H42C14.5 42 6.69424e-05 18.2253 0 0H15.2578Z" fill="#83CBFF"/>
+                                            </svg></p>  </a>
+                                            
+                                            
+                                        </section>
+                        
+                                        <section>
+                                        <h1 class="name"><p><span class="name_line">紫水 ゆう</span></p></h1>
+                                        <ul class="tagu">
+                                                <li><p>#紫水家</p></li>
+                                                <li><p>#デスバニア卓</p></li>
+                                                <li><p>#警察関係者</p></li>
+                                        </ul>
+                                        </section>
+                                    </li>
+                                    <li class="shokai akira">
+                                            <section class="shokai_gazo">
+                            
+                                            <p class="file"><img src="images/2Character/8Akira_File.webp" width="263" height="203" alt="panko_file"></p>
+                        
+                                            <p class="chara"><img src="images/2Character/8Akira_Chara.webp" width="341" height="200" alt="panko_image"></p>
+                            
+                                            <p class="akira_S kakushi"><svg width="259" height="42" viewBox="0 0 259 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.2578 0C17.2972 16.2681 31.179 28.8535 48 28.8535H210C226.821 28.8535 240.703 16.2681 242.742 0H258.678C258.678 28.3535 234.903 42 216.678 42H42C14.5 42 6.69424e-05 18.2253 0 0H15.2578Z" fill="url(#paint0_linear_26_900)" fill-opacity="0.99"/>
+                                                <defs>
+                                                <linearGradient id="paint0_linear_26_900" x1="129.339" y1="0" x2="129.339" y2="42" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#65BFFF"/>
+                                                <stop offset="0.0001" stop-color="#DE49FF"/>
+                                                <stop offset="1" stop-color="#EE38FF"/>
+                                                </linearGradient>
+                                                </defs>
+                                                </svg>
+                                                
+                                                </p>   
+                                                
+                                            </section>
+                            
+                                            <section>
+                                                    <h1 class="name"><p><span class="name_line">紫水 晶</span></p></h1>
+                                                    <ul class="tagu">
+                                                            <li><p>#紫水家</p></li>
+                                                            <li><p>#デスバニア卓</p></li>
+                                                            <li><p>#警察関係者</p></li>
+                                            </ul>
+                                            </section>
+                                        </li>
+                                        <li class="shokai panko">
+                                                <section class="shokai_gazo">
+                                
+                                
+                                                        <p class="file"><img src="images/2Character/9Nazo_File.webp" width="263" height="203" alt="panko_file"></p>
+                        
+                                                        <p class="chara"><img src="images/2Character/9Nazo_Chara.webp" width="341" height="200" alt="panko_image"></p>
+                                        
+                                                            
+                                                    
+                                                    
+                                                </section>
+                                
+                                                <section>
+                                                        <h1 class="name"><p>？？？</p></h1>
+                                                        <ul class="tagu">
+                                                                <li><p>#紫水家関係者</p></li>
+                                                                <li><p>#デスバニア卓</p></li>
+                                                                <li><p>#警察関係者</p></li>
+                                                </ul>
+                                                </section>
+                                            </li>
+                                  
+                                     </section>
+                                        </ul>
+        
+    </article>
+    <section>
+            <h2><p>and more...</p></h2>  
+        </section>  
+</article>
+
+ <!---------------------------------------------------     illust     ---------------------------------------------------------------------------->
  
+ <article class="illustration">
+        <a id="a_Illust"></a>
+    <p class="illust_background"><svg width="1080" height="1693" viewBox="0 0 1080 1693" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-16 90.7146L1086 0V1693L-11 1513.61L-16 90.7146Z" fill="#FFEEAC"/>
+        </svg>
+        </p>
+  <div class="illust_LOGO">
+       <p> <svg width="388" height="99" viewBox="0 0 388 99" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.0001 15H382V94H14.0001V15Z" fill="white"/>
+            <path d="M51.3644 70V49H55.4844V70H51.3644ZM53.3644 44.12C52.4844 44.12 51.8044 43.8933 51.3244 43.44C50.8444 42.9867 50.6044 42.3467 50.6044 41.52C50.6044 40.7467 50.8444 40.12 51.3244 39.64C51.831 39.16 52.511 38.92 53.3644 38.92C54.2444 38.92 54.9244 39.1467 55.4044 39.6C55.8844 40.0533 56.1244 40.6933 56.1244 41.52C56.1244 42.2933 55.871 42.92 55.3644 43.4C54.8844 43.88 54.2177 44.12 53.3644 44.12ZM68.6978 70V40.4H72.8178V70H68.6978ZM85.69 70V40.4H89.81V70H85.69ZM110.847 70.4C109.14 70.4 107.634 70 106.327 69.2C105.02 68.4 104.007 67.2533 103.287 65.76C102.567 64.2667 102.207 62.4933 102.207 60.44V49H106.327V59.04C106.327 60.64 106.54 62 106.967 63.12C107.42 64.2133 108.1 65.0533 109.007 65.64C109.94 66.2 111.114 66.48 112.527 66.48C113.514 66.48 114.434 66.3333 115.287 66.04C116.14 65.72 116.887 65.2667 117.527 64.68C118.167 64.0933 118.674 63.4 119.047 62.6C119.42 61.7733 119.607 60.8533 119.607 59.84V49H123.727V70H119.607V65.6L120.327 65.12C119.98 66 119.367 66.84 118.487 67.64C117.634 68.44 116.554 69.1067 115.247 69.64C113.967 70.1467 112.5 70.4 110.847 70.4ZM144.115 70.4C141.928 70.4 139.915 70.0933 138.075 69.48C136.262 68.8667 134.742 67.88 133.515 66.52L136.315 63.96C137.302 64.9467 138.435 65.6933 139.715 66.2C140.995 66.7067 142.408 66.96 143.955 66.96C144.568 66.96 145.195 66.92 145.835 66.84C146.475 66.76 147.062 66.6133 147.595 66.4C148.155 66.1867 148.595 65.92 148.915 65.6C149.262 65.2533 149.435 64.8267 149.435 64.32C149.435 63.4933 148.862 62.88 147.715 62.48C147.128 62.2667 146.448 62.0667 145.675 61.88C144.902 61.6667 144.035 61.48 143.075 61.32C141.475 61 140.062 60.64 138.835 60.24C137.608 59.84 136.595 59.32 135.795 58.68C135.235 58.2 134.795 57.6267 134.475 56.96C134.182 56.2933 134.035 55.52 134.035 54.64C134.035 53.7067 134.275 52.88 134.755 52.16C135.235 51.4133 135.902 50.7733 136.755 50.24C137.635 49.68 138.648 49.2667 139.795 49C140.968 48.7067 142.222 48.56 143.555 48.56C144.702 48.56 145.888 48.68 147.115 48.92C148.342 49.16 149.502 49.5333 150.595 50.04C151.715 50.52 152.648 51.1467 153.395 51.92L151.155 54.68C150.488 54.1467 149.715 53.68 148.835 53.28C147.982 52.8533 147.102 52.5333 146.195 52.32C145.288 52.08 144.435 51.96 143.635 51.96C142.995 51.96 142.355 52 141.715 52.08C141.075 52.16 140.475 52.3067 139.915 52.52C139.382 52.7067 138.955 52.96 138.635 53.28C138.315 53.6 138.155 54 138.155 54.48C138.155 54.8 138.235 55.1067 138.395 55.4C138.582 55.6667 138.835 55.9067 139.155 56.12C139.688 56.44 140.408 56.7333 141.315 57C142.222 57.24 143.248 57.4667 144.395 57.68C145.808 57.9467 147.115 58.2667 148.315 58.64C149.542 58.9867 150.582 59.44 151.435 60C152.102 60.4533 152.608 60.9867 152.955 61.6C153.328 62.2133 153.515 62.9333 153.515 63.76C153.515 65.1467 153.088 66.3467 152.235 67.36C151.382 68.3467 150.248 69.1067 148.835 69.64C147.448 70.1467 145.875 70.4 144.115 70.4ZM166.66 70V42.88H170.78V70H166.66ZM160.78 53V49H177.74V53H160.78ZM188.586 70V49H192.746V56.28L191.826 55.52C192.2 54.24 192.826 53.08 193.706 52.04C194.613 50.9733 195.64 50.1333 196.786 49.52C197.96 48.88 199.173 48.56 200.426 48.56C201.226 48.56 201.986 48.64 202.706 48.8C203.453 48.96 204.053 49.1867 204.506 49.48L203.426 53.8C202.92 53.5333 202.32 53.32 201.626 53.16C200.933 53 200.28 52.92 199.666 52.92C198.653 52.92 197.72 53.0933 196.866 53.44C196.013 53.7867 195.28 54.2667 194.666 54.88C194.053 55.4667 193.573 56.1333 193.226 56.88C192.906 57.6267 192.746 58.3867 192.746 59.16V70H188.586ZM221.789 70.4C219.549 70.4 217.562 69.9333 215.829 69C214.122 68.04 212.789 66.7333 211.829 65.08C210.869 63.4267 210.389 61.56 210.389 59.48C210.389 57.3467 210.896 55.4667 211.909 53.84C212.922 52.1867 214.309 50.8933 216.069 49.96C217.829 49.0267 219.829 48.56 222.069 48.56C223.456 48.56 224.736 48.7333 225.909 49.08C227.109 49.4267 228.136 49.8933 228.989 50.48C229.869 51.0667 230.562 51.7067 231.069 52.4C231.576 53.0933 231.856 53.8 231.909 54.52L230.789 54.44V49H234.949V70H230.789V64.48L231.669 64.6C231.616 65.24 231.309 65.9067 230.749 66.6C230.189 67.2667 229.456 67.8933 228.549 68.48C227.642 69.04 226.602 69.5067 225.429 69.88C224.282 70.2267 223.069 70.4 221.789 70.4ZM222.789 66.6C224.389 66.6 225.802 66.2933 227.029 65.68C228.256 65.04 229.216 64.1867 229.909 63.12C230.602 62.0267 230.949 60.8133 230.949 59.48C230.949 58.12 230.602 56.9067 229.909 55.84C229.216 54.7733 228.256 53.9333 227.029 53.32C225.802 52.7067 224.389 52.4 222.789 52.4C221.189 52.4 219.776 52.7067 218.549 53.32C217.322 53.9333 216.349 54.7733 215.629 55.84C214.936 56.9067 214.589 58.12 214.589 59.48C214.589 60.8133 214.936 62.0267 215.629 63.12C216.349 64.1867 217.322 65.04 218.549 65.68C219.776 66.2933 221.189 66.6 222.789 66.6ZM250.605 70V42.88H254.725V70H250.605ZM244.725 53V49H261.685V53H244.725ZM272.732 70V49H276.852V70H272.732ZM274.732 44.12C273.852 44.12 273.172 43.8933 272.692 43.44C272.212 42.9867 271.972 42.3467 271.972 41.52C271.972 40.7467 272.212 40.12 272.692 39.64C273.198 39.16 273.878 38.92 274.732 38.92C275.612 38.92 276.292 39.1467 276.772 39.6C277.252 40.0533 277.492 40.6933 277.492 41.52C277.492 42.2933 277.238 42.92 276.732 43.4C276.252 43.88 275.585 44.12 274.732 44.12ZM300.305 70.4C297.825 70.4 295.625 69.9333 293.705 69C291.785 68.0667 290.278 66.7733 289.185 65.12C288.092 63.4667 287.545 61.5867 287.545 59.48C287.545 57.3467 288.092 55.4667 289.185 53.84C290.278 52.1867 291.785 50.8933 293.705 49.96C295.625 49.0267 297.825 48.56 300.305 48.56C302.758 48.56 304.945 49.0267 306.865 49.96C308.785 50.8933 310.292 52.1867 311.385 53.84C312.478 55.4667 313.025 57.3467 313.025 59.48C313.025 61.5867 312.478 63.4667 311.385 65.12C310.292 66.7733 308.785 68.0667 306.865 69C304.945 69.9333 302.758 70.4 300.305 70.4ZM300.305 66.64C301.905 66.64 303.358 66.3333 304.665 65.72C305.972 65.1067 306.998 64.2667 307.745 63.2C308.518 62.1067 308.878 60.8667 308.825 59.48C308.878 58.0667 308.518 56.8267 307.745 55.76C306.998 54.6933 305.972 53.8533 304.665 53.24C303.358 52.6267 301.905 52.32 300.305 52.32C298.678 52.32 297.212 52.6267 295.905 53.24C294.598 53.8533 293.572 54.7067 292.825 55.8C292.078 56.8667 291.718 58.0933 291.745 59.48C291.718 60.8667 292.078 62.1067 292.825 63.2C293.572 64.2667 294.598 65.1067 295.905 65.72C297.212 66.3333 298.678 66.64 300.305 66.64ZM323.625 70V49H327.745V54.36L326.505 54.56C326.985 53.5733 327.679 52.6267 328.585 51.72C329.492 50.8133 330.559 50.0667 331.785 49.48C333.039 48.8667 334.412 48.56 335.905 48.56C337.879 48.56 339.532 48.9333 340.865 49.68C342.199 50.4267 343.199 51.4667 343.865 52.8C344.559 54.1333 344.905 55.68 344.905 57.44V70H340.785V58C340.785 56.8 340.519 55.7867 339.985 54.96C339.479 54.1067 338.772 53.4667 337.865 53.04C336.985 52.5867 335.959 52.36 334.785 52.36C333.772 52.36 332.825 52.5467 331.945 52.92C331.092 53.2667 330.345 53.7333 329.705 54.32C329.092 54.9067 328.612 55.5467 328.265 56.24C327.919 56.9333 327.745 57.6267 327.745 58.32V70H325.705C325.119 70 324.652 70 324.305 70C323.959 70 323.732 70 323.625 70Z" fill="#6F0C76"/>
+            <path d="M9.99994 10H378V89H9.99994V10Z" stroke="#6F0C76" stroke-width="3"/>
+            <rect width="20" height="20" fill="white"/>
+            <rect x="1.5" y="1.5" width="17" height="17" stroke="#6F0C76" stroke-opacity="0.99" stroke-width="3"/>
+            <rect x="368" width="20" height="20" fill="white"/>
+            <rect x="369.5" y="1.5" width="17" height="17" stroke="#6F0C76" stroke-opacity="0.99" stroke-width="3"/>
+            <rect y="79" width="20" height="20" fill="white"/>
+            <rect x="1.5" y="80.5" width="17" height="17" stroke="#6F0C76" stroke-opacity="0.99" stroke-width="3"/>
+            <rect x="368" y="79" width="20" height="20" fill="white"/>
+            <rect x="369.5" y="80.5" width="17" height="17" stroke="#6F0C76" stroke-opacity="0.99" stroke-width="3"/>
+            </svg>
+        </p>
+            
+ </div>
+ <div class="illust_moji">
+     <h1><p>今までに描いた落書きなどの一覧です。</p></h1>
+ </div>
+ <div class="hidden">
+  <div class="illustline">
+        <p class="illustline_top"><img src="images/3Illustration/Timeline.webp" width="2157" height="296"></p>
+        <p class="illustline_under"><svg width="1580" height="286" viewBox="0 0 1080 286" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="-67" width="1191" height="286" fill="#DC64E5" fill-opacity="0.99"/>
+                </svg></p>
+                
+    </div>
+</div>
+
+
+ <div class=button>
+     <ul>
+        <li class="button_top"><a href="illustration.html"><svg width="422" height="96" viewBox="0 0 422 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.5 48C2.5 22.871 22.871 2.5 48 2.5H370C395.129 2.5 415.5 22.871 415.5 48V48C415.5 73.129 395.129 93.5 370 93.5H48C22.871 93.5 2.5 73.129 2.5 48V48Z" fill="#5BCCEF" stroke="#6F0C76" stroke-width="5"/>
+            <path d="M69.6172 63.5L57.3372 35.5H62.2172L69.4172 52.3C69.6305 52.8333 69.8839 53.4467 70.1772 54.14C70.4972 54.8333 70.8172 55.5667 71.1372 56.34C71.4839 57.0867 71.8039 57.82 72.0972 58.54C72.3905 59.26 72.6305 59.9133 72.8172 60.5L71.6172 60.54C71.8839 59.7933 72.2039 58.9533 72.5772 58.02C72.9505 57.0867 73.3372 56.1267 73.7372 55.14C74.1372 54.1533 74.5105 53.22 74.8572 52.34L81.5372 35.5H86.5772L74.4572 63.5H69.6172ZM95.2247 63.5V59.34H101.505V39.66H95.2247V35.5H112.145V39.66H105.825V59.34H112.145V63.5H95.2247ZM124.135 63.5V35.5H145.335V39.66H128.455V59.34H145.335V63.5H124.135ZM126.335 51.22V47.06H143.135V51.22H126.335ZM163.036 63.5L153.236 35.5H157.916L163.636 52.34C163.849 52.8733 164.049 53.46 164.236 54.1C164.422 54.7133 164.596 55.3533 164.756 56.02C164.942 56.66 165.102 57.2733 165.236 57.86C165.396 58.42 165.542 58.9267 165.676 59.38L164.116 59.34C164.436 58.38 164.742 57.4867 165.036 56.66C165.329 55.8333 165.622 55.06 165.916 54.34C166.209 53.62 166.489 52.94 166.756 52.3L171.876 40.34H175.916L180.876 52.26C181.196 52.98 181.502 53.74 181.796 54.54C182.116 55.3133 182.409 56.0733 182.676 56.82C182.942 57.5667 183.156 58.2867 183.316 58.98L181.916 59.26C182.049 58.7267 182.169 58.2333 182.276 57.78C182.409 57.3 182.529 56.8467 182.636 56.42C182.769 55.9667 182.902 55.5133 183.036 55.06C183.196 54.6067 183.356 54.14 183.516 53.66C183.676 53.18 183.862 52.66 184.076 52.1L190.196 35.5H194.836L184.236 63.5H181.236L173.396 45.14L173.996 45.3L166.196 63.5H163.036ZM220.033 63.5V35.5H224.273L236.113 51.58H234.393L246.273 35.5H250.433V63.5H246.113V51.78C246.113 49.4867 246.166 47.38 246.273 45.46C246.38 43.5133 246.593 41.5533 246.913 39.58L247.393 41.14L236.513 55.46H233.873L223.113 41.22L223.553 39.58C223.846 41.5 224.046 43.4333 224.153 45.38C224.286 47.3 224.353 49.4333 224.353 51.78V63.5H220.033ZM276.251 63.9C273.958 63.9 271.851 63.54 269.931 62.82C268.038 62.0733 266.371 61.0467 264.931 59.74C263.518 58.4333 262.425 56.9133 261.651 55.18C260.878 53.42 260.491 51.5267 260.491 49.5C260.491 47.4733 260.878 45.5933 261.651 43.86C262.425 42.1 263.518 40.5667 264.931 39.26C266.371 37.9533 268.038 36.94 269.931 36.22C271.851 35.4733 273.958 35.1 276.251 35.1C278.545 35.1 280.638 35.46 282.531 36.18C284.451 36.9 286.118 37.9267 287.531 39.26C288.971 40.5667 290.078 42.1 290.851 43.86C291.651 45.5933 292.051 47.4733 292.051 49.5C292.051 51.5267 291.651 53.42 290.851 55.18C290.078 56.9133 288.971 58.4467 287.531 59.78C286.118 61.0867 284.451 62.1 282.531 62.82C280.638 63.54 278.545 63.9 276.251 63.9ZM276.251 59.7C277.931 59.7 279.451 59.4467 280.811 58.94C282.198 58.4067 283.398 57.6867 284.411 56.78C285.451 55.8467 286.251 54.7667 286.811 53.54C287.371 52.2867 287.651 50.94 287.651 49.5C287.651 48.06 287.371 46.7267 286.811 45.5C286.251 44.2467 285.451 43.1667 284.411 42.26C283.398 41.3267 282.198 40.6067 280.811 40.1C279.451 39.5667 277.931 39.3 276.251 39.3C274.598 39.3 273.078 39.5667 271.691 40.1C270.305 40.6067 269.091 41.3133 268.051 42.22C267.038 43.1267 266.251 44.2067 265.691 45.46C265.158 46.6867 264.891 48.0333 264.891 49.5C264.891 50.94 265.158 52.2867 265.691 53.54C266.251 54.7933 267.038 55.8733 268.051 56.78C269.091 57.6867 270.305 58.4067 271.691 58.94C273.078 59.4467 274.598 59.7 276.251 59.7ZM302.103 63.5V35.5H316.863C318.49 35.5 319.983 35.8867 321.343 36.66C322.703 37.4333 323.797 38.4867 324.623 39.82C325.45 41.1267 325.863 42.5933 325.863 44.22C325.863 45.8467 325.423 47.34 324.543 48.7C323.69 50.0333 322.543 51.1 321.103 51.9C319.663 52.7 318.077 53.1 316.343 53.1H306.423V63.5H302.103ZM321.943 63.5L313.303 50.86L317.863 49.86L327.303 63.54L321.943 63.5ZM306.423 48.94H316.223C317.157 48.94 318.01 48.7267 318.783 48.3C319.557 47.8733 320.17 47.3 320.623 46.58C321.077 45.86 321.303 45.0733 321.303 44.22C321.303 43.34 321.063 42.5667 320.583 41.9C320.103 41.2067 319.437 40.66 318.583 40.26C317.757 39.86 316.837 39.66 315.823 39.66H306.423V48.94ZM338.002 63.5V35.5H359.202V39.66H342.322V59.34H359.202V63.5H338.002ZM340.202 51.22V47.06H357.002V51.22H340.202Z" fill="white"/>
+            </svg></a>
+            </li>
+        <li class="button_under"><svg width="422" height="96" viewBox="0 0 422 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.5 48C2.5 22.871 22.871 2.5 48 2.5H370C395.129 2.5 415.5 22.871 415.5 48V48C415.5 73.129 395.129 93.5 370 93.5H48C22.871 93.5 2.5 73.129 2.5 48V48Z" fill="#FFFFFF" stroke="#C337B7" stroke-width="5"/>
+        </svg></li>
+            </ul>       
+   </div>
+</article>
+
+<!---------------------------------------------------    history     ---------------------------------------------------------------------------->
+
+<article class="history">
+        <a id="a_History"></a>
+  <div class="history_LOGO">
+    <p><img src="images/4History/LOGO_Flame.webp" width="453" height="203" alt="history_LOGO"></p>
+  </div>
+  <section>
+        <h1><p> 2024年10月以降におこなったセッションまとめです。</p></h1>
+    </section>
 
- .illustline {
-  position: relative;
-  /* marginのpx指定をvwに統一 */
-  margin: min(9.25vw, 100px) auto;
-  width: 100%;
-  height: min(30vw, 324px); /* 高さを確保して子要素の崩れを防ぐ */
-  display: block; /* flexより制御しやすい場合があります */
-}
-
-/* 上側の画像 */
-.illustline_top {
-  position: relative;
-  z-index: 5;
-  margin: 0;
-  transform: rotate(4deg);
-  /* 回転の基準を明確にする（必要に応じて） */
-  transform-origin: center center;
-}
-
-.illustline_top img {
-  width: min(200vw, 2157px);
-  height: auto;
-  display: block;
-}
-
-/* 下側のピンク背景（SVG） */
-.illustline_under {
-  position: absolute;
-  /* 固定の 10px ではなく vw を使用する */
-  top: min(0.92vw, 10px);
-  left: 50%;
-  transform: translateX(-50%) rotate(-1.5deg);
-  z-index: 1;
-  width: 100%;
-}
-
-.illustline_under svg {
-  /* 親の幅（100%）に追従させる */
-  width: min(146.29vw, 1580px);
-  height: auto;
-  display: block;
-}
-
-.illustline_under{
-  position:absolute;
-  margin-top:10px;
-  transform: rotate(-1.5deg);
-z-index: 1;
-}
-
-.illustline {
-  position: relative;
-  width: 100%;
-  /* デザイン上の最大の高さ、またはvwで高さを指定 */
-  height: min(30vw, 324px); 
-  margin: min(9.25vw, 100px) auto;
-  /* 子要素を重ねるための準備 */
-}
-
-.illustline_top,
-.illustline_under {
-  position: absolute;
-  /* 1. 親要素の「ど真ん中」に配置の起点を置く */
-  top: 50%;
-  left: 50%;
-  /* 2. 要素自身の大きさの半分だけ戻す（これで中心が合う） */
-  /* ついでに回転もここに記述することで、中心を軸に回ります */
-  transform-origin: center center;
-}
-
-/* 上の画像 */
-.illustline_top {
-  z-index: 5;
-  /* 左右中央(50%)、上下中央(50%)、そして回転4度 */
-  transform: translate(-50%, -50%) rotate(4deg);
-}
-
-.illustline_top img {
-  width: min(200vw, 2157px);
-  height: auto;
-  display: block;
-}
-
-/* 下のピンクSVG */
-.illustline_under {
-  z-index: 1;
-  /* 左右中央(50%)、上下中央(50%) + 少しだけ下にずらす(2%)、そして回転-1.5度 */
-  /* 10pxのような固定値ではなく % や vw を使うのがズレないコツです */
-  transform: translate(-70%, calc(-50% + 1vw)) rotate(-1.5deg);
-}
-
-.illustline_under svg {
-  width: min(146.29vw, 1580px);
-  height: auto;
-  display: block;
-}
-
-
-/*---------------------------------ボタン------------------------------------------*/
-.button{
-  display: flex;
-  justify-content: center;
-  margin-top:min(9.2vw,100px);
-  margin-bottom:min(9.2vw,100px);
-
-transition: transform 0.3s ease;
-}
-
-
-.button_top svg{
-
-  width: min(39vw,422px);
-  height: min(8.88vw,96px);
-}
-
-.button_under svg{
-  
-  width: min(39vw,422px);
-  height: min(8.88vw,96px);
-}
-
-.button_top{
-  position:absolute;
-z-index: 5;
-
-
-transition: transform 0.3s ease;}
-
-.button_under{
-  margin: 0 auto;
-  position:relative;
-  
-  margin-top:min(1.388vw,15px);
-  z-index: 2;
-}
-
-.button:hover{
-  
-  transform: translateY(0.27vw);
-}
-
-.button_top:hover{
-  transform: translateY(0.6vw);
-}
-
-/*---------------------------------ボタンおわり------------------------------------------*/
-
-.history_LOGO{
-  margin-top:min(41.66vw,450px); 
-  margin-bottom: min(9.25vw,100px);
-  position: relative;
-  z-index: 4;
-}
-
-.history_LOGO img{
-  width: min(41.94vw,453px);
-  height: min(18.79vw,203px);
-}
-
-.history p{
-  font-size:min(3.2rem,32px)
-}
-
-.ZU{
-  
-  width: min(88.33vw,954px);
-  transform: rotate(-2deg);
-  margin-top: min(11.11vw,120px);
-  margin-bottom: min(11.11vw,120px);
-  margin-left:auto;
-  margin-right:auto;
-  
-}
-
-.ZU img{
-  width: min(88.33vw,954px);
-  height: min(88.51vw,956px);
-}
-.saigo{
-  
-  position:relative;
-}
-
-.osoroshi{
-  
-  width:min(100vw,1080px);
-  overflow: hidden;
-  
-}
-
-.osoroshi img{
-  width:min(118.51vw,1280px);
-  
- height:min(129.62vw,1400px);
-}
-
-.saigo_moji p{
-  position: absolute;
-  color: white;
-  font-size:min(3.2rem,32px);
-  text-align: center;
-  
-  margin-top:min(88.33vw,954px);
-  
-  
-  left: 0;
-  right: 0;
-
-}
-
-
-.saigo_moji .dice{
-  
-  font-size: min(6.4rem,64px);
-}
-  
-
-.dice{
-  padding-top:min(4.62vw,50px);
-}
-
-footer{
-  
-  background-color: black;
-}
-
-footer p{
-  color:white; 
-  font-size:min(2.0rem,20px);
-  padding-bottom:min(2.77vw,30px);
-  position: relative;
-}
-
-footer a{
-  
-  display: flex;
-  justify-content: center;
-  margin: min(0.92vw,10px);
-}
-
-.contact{
-  padding-top:min(2.77vw,30px);
-  padding-bottom:min(0.92vw,850px);
-}
-
-.mini_Yu2{
-  position: absolute;
-  z-index: 3;
-  margin-top: max(-9.25vw,-100px);
-  margin-left:min(1.85vw,20px);
-}
-
-
-.mini_Yu2 img{
-  width: min(30.55vw,330px);
-  height: min(31.01vw,335px);
-}
-
-.x_icon img{
-  width: min(10vw,100px);
-  height: min(10vw,100px);
-}
-
-
-/*---------------------------------history.html------------------------------------------*/
-
-
-
-
-.Stitle_matome{
-  margin-left:min(32.4vw,350px);
-  margin-top: min(4.62vw,50px);
-  position: relative;
-}
-
-.HandOut p{
-  font-size: min(2.4rem,24px);
-  text-align: left;
-}
-
-.S_title{
-  margin-top: max(-5.55vw,-60px);
-  position:absolute;
-transition: transform 0.3s ease;
-
-}
-
-
-.S_title:hover{
-  transform: translateX(0%);
-  transform: translateY(-100%);
-  transform: scale(1.1);
-}
-
-.HandOut{
-  margin-left: min(12.96vw,140px);
-  padding:30px 50px;
-  padding-top: min(2.77vw,30px);
-  padding-bottom: min(2.77vw,30px);
-  padding-left:min(4.62vw,50px);
-  width:fit-content;
-  background-color: white;
-  border: min(0.37vw,4px) solid #6F0C76;
-  margin-bottom:10px;
-
-}
-
-.sinario{
-  padding-top:min(8.33vw,90px);
-  position: relative;
-}
-
-.year{
-  position: absolute;
-  margin-top:max(-1.85vw,-20px);
-  margin-left: max(-21.29vw,-230px);
-  z-index: 3;
-}
-
-
-.year p{
-  font-size: min(3.2rem,32px);
-  
-}
-
-.year_suji{
-  margin-left: min(3.70vw,40px);
-  margin-top:max(-3.51vw,-38px)
-}
-.year {
-  align-items: flex-start; /* 上端を揃える */
-}
-
-body {
-  margin: 0;
-  overflow-x: hidden; /* はみ出しによるスクロールバーを防止 */
-}
-
-main{
-  width: 100vw;
-  max-width: 1080px;
-}
-
-header{
-  
-  max-width: 1080px;
-}
-
-
-
-
-.shokai_honbun p{
-  font-size: min(2.4rem,24px)
-}
-
-.tokutyo{
-  position: relative;
-}
-
-.tokutyo p{
-  font-size: min(2.4rem,24px);
-}
-.seat ul {
-  
-  font-size: min(2.4rem,24px);
-}
-
-
-
-.tokutyo svg{
     
-  position: relative;
-}
 
+<div class="ZU"><img src="images/4History/ZU.webp" width="954" height="956" alt="zu"></div>
 
+  <div class=button>
+        <ul>
+           <li class="button_top"><a href="history.html"><svg width="422" height="96" viewBox="0 0 422 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.5 48C2.5 22.871 22.871 2.5 48 2.5H370C395.129 2.5 415.5 22.871 415.5 48C415.5 73.129 395.129 93.5 370 93.5H48C22.871 93.5 2.5 73.129 2.5 48Z" fill="#C337B7" stroke="#6F0C76" stroke-opacity="0.99" stroke-width="5"/>
+               <path d="M69.6172 63.5L57.3372 35.5H62.2172L69.4172 52.3C69.6305 52.8333 69.8839 53.4467 70.1772 54.14C70.4972 54.8333 70.8172 55.5667 71.1372 56.34C71.4839 57.0867 71.8039 57.82 72.0972 58.54C72.3905 59.26 72.6305 59.9133 72.8172 60.5L71.6172 60.54C71.8839 59.7933 72.2039 58.9533 72.5772 58.02C72.9505 57.0867 73.3372 56.1267 73.7372 55.14C74.1372 54.1533 74.5105 53.22 74.8572 52.34L81.5372 35.5H86.5772L74.4572 63.5H69.6172ZM95.2247 63.5V59.34H101.505V39.66H95.2247V35.5H112.145V39.66H105.825V59.34H112.145V63.5H95.2247ZM124.135 63.5V35.5H145.335V39.66H128.455V59.34H145.335V63.5H124.135ZM126.335 51.22V47.06H143.135V51.22H126.335ZM163.036 63.5L153.236 35.5H157.916L163.636 52.34C163.849 52.8733 164.049 53.46 164.236 54.1C164.422 54.7133 164.596 55.3533 164.756 56.02C164.942 56.66 165.102 57.2733 165.236 57.86C165.396 58.42 165.542 58.9267 165.676 59.38L164.116 59.34C164.436 58.38 164.742 57.4867 165.036 56.66C165.329 55.8333 165.622 55.06 165.916 54.34C166.209 53.62 166.489 52.94 166.756 52.3L171.876 40.34H175.916L180.876 52.26C181.196 52.98 181.502 53.74 181.796 54.54C182.116 55.3133 182.409 56.0733 182.676 56.82C182.942 57.5667 183.156 58.2867 183.316 58.98L181.916 59.26C182.049 58.7267 182.169 58.2333 182.276 57.78C182.409 57.3 182.529 56.8467 182.636 56.42C182.769 55.9667 182.902 55.5133 183.036 55.06C183.196 54.6067 183.356 54.14 183.516 53.66C183.676 53.18 183.862 52.66 184.076 52.1L190.196 35.5H194.836L184.236 63.5H181.236L173.396 45.14L173.996 45.3L166.196 63.5H163.036ZM220.033 63.5V35.5H224.273L236.113 51.58H234.393L246.273 35.5H250.433V63.5H246.113V51.78C246.113 49.4867 246.166 47.38 246.273 45.46C246.38 43.5133 246.593 41.5533 246.913 39.58L247.393 41.14L236.513 55.46H233.873L223.113 41.22L223.553 39.58C223.846 41.5 224.046 43.4333 224.153 45.38C224.286 47.3 224.353 49.4333 224.353 51.78V63.5H220.033ZM276.251 63.9C273.958 63.9 271.851 63.54 269.931 62.82C268.038 62.0733 266.371 61.0467 264.931 59.74C263.518 58.4333 262.425 56.9133 261.651 55.18C260.878 53.42 260.491 51.5267 260.491 49.5C260.491 47.4733 260.878 45.5933 261.651 43.86C262.425 42.1 263.518 40.5667 264.931 39.26C266.371 37.9533 268.038 36.94 269.931 36.22C271.851 35.4733 273.958 35.1 276.251 35.1C278.545 35.1 280.638 35.46 282.531 36.18C284.451 36.9 286.118 37.9267 287.531 39.26C288.971 40.5667 290.078 42.1 290.851 43.86C291.651 45.5933 292.051 47.4733 292.051 49.5C292.051 51.5267 291.651 53.42 290.851 55.18C290.078 56.9133 288.971 58.4467 287.531 59.78C286.118 61.0867 284.451 62.1 282.531 62.82C280.638 63.54 278.545 63.9 276.251 63.9ZM276.251 59.7C277.931 59.7 279.451 59.4467 280.811 58.94C282.198 58.4067 283.398 57.6867 284.411 56.78C285.451 55.8467 286.251 54.7667 286.811 53.54C287.371 52.2867 287.651 50.94 287.651 49.5C287.651 48.06 287.371 46.7267 286.811 45.5C286.251 44.2467 285.451 43.1667 284.411 42.26C283.398 41.3267 282.198 40.6067 280.811 40.1C279.451 39.5667 277.931 39.3 276.251 39.3C274.598 39.3 273.078 39.5667 271.691 40.1C270.305 40.6067 269.091 41.3133 268.051 42.22C267.038 43.1267 266.251 44.2067 265.691 45.46C265.158 46.6867 264.891 48.0333 264.891 49.5C264.891 50.94 265.158 52.2867 265.691 53.54C266.251 54.7933 267.038 55.8733 268.051 56.78C269.091 57.6867 270.305 58.4067 271.691 58.94C273.078 59.4467 274.598 59.7 276.251 59.7ZM302.103 63.5V35.5H316.863C318.49 35.5 319.983 35.8867 321.343 36.66C322.703 37.4333 323.797 38.4867 324.623 39.82C325.45 41.1267 325.863 42.5933 325.863 44.22C325.863 45.8467 325.423 47.34 324.543 48.7C323.69 50.0333 322.543 51.1 321.103 51.9C319.663 52.7 318.077 53.1 316.343 53.1H306.423V63.5H302.103ZM321.943 63.5L313.303 50.86L317.863 49.86L327.303 63.54L321.943 63.5ZM306.423 48.94H316.223C317.157 48.94 318.01 48.7267 318.783 48.3C319.557 47.8733 320.17 47.3 320.623 46.58C321.077 45.86 321.303 45.0733 321.303 44.22C321.303 43.34 321.063 42.5667 320.583 41.9C320.103 41.2067 319.437 40.66 318.583 40.26C317.757 39.86 316.837 39.66 315.823 39.66H306.423V48.94ZM338.002 63.5V35.5H359.202V39.66H342.322V59.34H359.202V63.5H338.002ZM340.202 51.22V47.06H357.002V51.22H340.202Z" fill="white"/>
+               </svg></a>
+               </li>
+           <li class="button_under"><svg width="422" height="96" viewBox="0 0 422 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.5 48C2.5 22.871 22.871 2.5 48 2.5H370C395.129 2.5 415.5 22.871 415.5 48C415.5 73.129 395.129 93.5 370 93.5H48C22.871 93.5 2.5 73.129 2.5 48Z" fill="#FFF4C3" stroke="#6F0C76" stroke-opacity="0.99" stroke-width="5"/>
+                </svg></li>
+               </ul>       
+      </div>
+</article>
 
-.tokutyo_hidari{
-  color: white;
-text-align:left;
-position: absolute;
-z-index: 2;
-margin-left: min(3.24vw,35px);
-}
-.tokutyo_migi{
-  color:#6F0C76;
-  text-align:left;
-position: absolute;
-z-index: 2;
-margin-left: min(12.96vw,140px);
-}
+<!---------------------------------------------------    footer     ---------------------------------------------------------------------------->
 
-.tokutyo_hidari, .tokutyo_migi {
-  position: absolute;
-  /* margin-top は使わず、top: 50% と transform で中央固定 */
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;}
-
-
-
-.haikei{
-  position: absolute;
-  margin-left: min(4.72vw,51px);
- margin-top: min(13.88vw,150px);
- z-index: 0;
-}
-
-.haikei img{
-  width: min(90.46vw,977px);
-  height: min(121.11vw,1308px);
-}
-
-.name_plate{
-  padding-top: min(4.62vw,50px);
-  margin-bottom: min(2.77vw,40px);
-}
-
-
-.chara_yoso{
-  margin-left:min(9.25vw,100px);
-}
-
-.tokutyo li{
-  position: relative;
-    display: flex;
-    align-items: center; /* 垂直方向の中央 */
-    margin-top: min(1.388vw, 15px);
-}
-
-.shokai_honbun p{
-  
-text-align:left;
-}
-
-.shokai_honbun{
-  margin-top: min(3.7vw,40px);
-  width: min(38.14vw,412px);
-  height: fit-content;
-  background-color: white;
-  padding: min(2.7vw,30px);
-  float: left;
-  border-radius:min(1.38vw,15px);
-  border: min(0.35vw,3px) solid #6F0C76 ;
-}
-
-
-.chara_yoso li svg{
+<div class="saigo">
     
-  border-radius: min(1.75vw,19px);
-}
+        <div class="saigo_moji">
+                <p>OUR LIFE, WITH</p>
+                <p class="dice">DICE</p></div>
+<div class="osoroshi"><img src="images/osoroshi.webp" width="1280" height="1400" alt="osoroshi"></div>
 
-.chara_yoso{
-  position: relative;
-    z-index: 1;
-}
+</div>
 
-.shokai_sita_gazo{
-    position: absolute;
-    z-index: 0;
-    padding-top: min(46.29vw,500px);
-}
+<footer>
+    <div class="mini_Yu2"><img src="images/mini_llust/mini_Yu2.png" width="330" height="335" alt="mini_yu"></div>
+    <p class="contact">CONTACT</p>
+    <a href="https://x.com/nejiko_trpg" class="x_icon"><img src="images/footer/x_icon.png" width="100" height="100"></a>
+    <p>presented by Yu Shimizu</p>
+</footer>
 
-.seat section{
-    margin-top:min(1.85vw,20px);
-}
-
-.seat{
-    position: relative;
-  width: min(100vw,1080px);
-  margin: 0 auto;
-  
-  padding-top: min(46.29vw,500px);
-}
-
-.seat section{
-    text-align:  center; 
-}
-
-.seat h1{
-  font-family: "Lexend Mega","ta-marugo-gf-03", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  text-align: center;
- position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: max(-20.37vw,-220px);
-    font-size: min(3.0rem,30px);
-}
-
-.seat ul {
-    
-    position: absolute;
-    text-align: left;
-    
-    margin-left :min(22.22vw,240px);
-    
-    margin-top:max(-13.88vw,-150px);
-    text-decoration:underline;
-    text-decoration-color: #6F0C76;
-    z-index: 3;
-}
-.seat ul li{
-    margin-bottom:min(0.92vw,10px);
-}
-
-
-.seat ul a{
-
-  text-decoration:underline;
-  text-decoration-color: #6F0C76;
-}
-
-
-.seat ul p{
-  text-align: left;
-  
-  text-decoration:underline;
-  text-decoration-color: white;
-}
-
-.seat ul p{
-  text-align: left;
-}
-
-
-.seat img{
-  width: min(62.87vw,679px);
-  height: min(21.66vw,234px);
-}
-
-
-.tokutyo svg{
-  width: min(27.68vw,299px);
-  height: auto; /* 高さを自動にして比率を維持 */
-    display: block; /* 余計な隙間を排除 */
-}
-
-
-@media (min-width: 979px){
- body{
-   zoom: 0.5;
- }
-}
+</body>
+</main>
+</html>
