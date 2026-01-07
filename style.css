@@ -1094,3 +1094,8 @@ text-align:left;
    zoom: 0.5;
  }
 }
+
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
