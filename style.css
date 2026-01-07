@@ -1089,11 +1089,6 @@ text-align:left;
 }
 
 
-@media (min-width: 979px){
- body{
-   zoom: 0.5;
- }
-}
 
 
 html {
@@ -1115,4 +1110,5 @@ body {
 td {
   -webkit-text-size-adjust: 100%;
 }
+
 
