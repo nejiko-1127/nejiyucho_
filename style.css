@@ -475,7 +475,7 @@ margin-bottom: min(27.7vw,300px);
 }
 
 .chara:hover {
-  transform: translateY(-0.9vw);
+  transform: translateY(max(-0.9vw, -10px));
   box-shadow    : 0 0 20px #0000;
 }
 
@@ -1089,12 +1089,38 @@ text-align:left;
 }
 
 
-
 @media (min-width: 979px){
- body{
-   zoom: 0.5;
- }
+ #wrapper1{transform: scale(0.5);
+  transform-origin: top center; /* 上端中央を軸に縮める */
+  width: 200%; /* 0.5倍にする分、幅を2倍(200%)確保して計算を合わせる */
+  margin-left: -50%; /* 中央寄せを維持するための調整 */
+ /* 【重要】高さを半分にする計算 */
+    /* 本来の高さの50%分をマイナスのマージンで相殺します */
+    margin-bottom: -50%; 
+  }
+
+  body {
+    /* スケールで広がった横幅をカットしてスクロールバーを消す */
+    overflow-x: hidden;
+  }
+
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+       text-size-adjust: 100%;
 
+}
 
+main{
+  
+  -webkit-text-size-adjust: 100%;
+       text-size-adjust: 100%;
+}
+body {
+  -webkit-text-size-adjust: 100%;
+}
+
+td {
+  -webkit-text-size-adjust: 100%;
+}
